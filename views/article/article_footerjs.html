@@ -1,0 +1,38 @@
+<script src="/static/plugins/jquery.min.js"></script>
+<script type="text/javascript" src="/static/simditor/scripts/module.js"></script>
+<script type="text/javascript" src="/static/simditor/scripts/uploader.js"></script>
+<script type="text/javascript" src="/static/simditor/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="/static/simditor/scripts/dompurify.js"></script>
+<script type="text/javascript" src="/static/simditor/scripts/simditor.js"></script>
+<script type="text/javascript" src="/static/simditor/scripts/page-demo.js"></script>
+<script type="text/javascript" src="/static/simditor/scripts/mobilecheck.js"></script>
+<script type="text/javascript" src="/static/simditor/scripts/simditor-markdown.js"></script>
+<script>
+    var editor = new Simditor({
+        textarea: $('#txt-content'),
+        //markdown: true,
+        //toolbar: ['bold', 'italic', 'underline', 'color', '|', 'ol', 'ul', '|', 'markdown'],
+        //optional options
+        /*autoDownloadFontAwesome: false,
+        autofocus: true,
+        autosave: {
+            enabled: true,
+            uniqueId: "editor-temp-0",
+            delay: 10000
+        },
+        renderingConfig: {
+            codeSyntaxHighlighting: true
+        },
+        previewRender: function(plainText) {
+            var preview = document.getElementsByClassName("editor-preview-side")[0];
+            preview.innerHTML = this.parent.markdown(plainText);
+            preview.setAttribute('id','editor-preview');
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"editor-preview"]);
+            return preview.innerHTML;
+        },
+        showIcons: ["code", "table"],
+        status: ["autosave", "lines", "words"],
+        tabSize: 4*/
+    });
+  
+</script>

@@ -42,6 +42,10 @@ func init() {
 	beego.Router("/usercenter/uploadimage", &controllers.UserCenterController{}, "Post:UploadImage")
 	beego.Router("/usercenter/passwordsave", &controllers.UserCenterController{}, "Post:PasswordSave")
 
+	//新建文章
+	beego.Router("/article/index", &controllers.ArticleController{}, "*:Index")
+
+	//首页
 	beego.Router("/home/index", &controllers.HomeController{}, "*:Index")
 	beego.Router("/home/login", &controllers.HomeController{}, "*:Login")
 	beego.Router("/home/dologin", &controllers.HomeController{}, "Post:DoLogin")
