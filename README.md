@@ -56,7 +56,7 @@
 ilus 的诞生离不开下面这些项目：
 
 - [Halo](https://github.com/halo-dev/halo)：Halo 可能是最好的 Java 博客系统
-- [EasyMDE](https://github.com/RIP21/react-simplemde-editor)：基于SimpleMDE更新的Markdown Editor
+- [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor.
 - [sdrms](https://github.com/lhtzbj12/sdrms)：SDRMS是基于Beego开发的易用、易扩展、界面友好的轻量级功能权限管理系统
 
 ## 捐赠

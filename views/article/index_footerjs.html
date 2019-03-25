@@ -2,29 +2,10 @@
 <script src="/static/plugins/jquery-treetable/js/jquery.treetable.js"></script>
 <!-- x-editable插件 -->
 <script src="/static/plugins/x-editable/js/bootstrap-editable.min.js"></script>
-{{/*<script type="text/javascript" src="/static/simditor/scripts/module.js"></script>
-<script type="text/javascript" src="/static/simditor/scripts/uploader.js"></script>
-<script type="text/javascript" src="/static/simditor/scripts/hotkeys.js"></script>
-<script type="text/javascript" src="/static/simditor/scripts/dompurify.js"></script>
-<script type="text/javascript" src="/static/simditor/scripts/simditor.js"></script>
-<script type="text/javascript" src="/static/simditor/scripts/page-demo.js"></script>
-<script type="text/javascript" src="/static/simditor/scripts/mobilecheck.js"></script>*/}}
 <script type="text/javascript" src="/static/plugins/easymde/easymde.min.js"></script>
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-
+<script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>
 <script>
 
-    MathJax.Hub.Config({
-        showProcessingMessages: false,
-        messageStyle: "none",
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a']
-        }
-    });
-    var QUEUE = MathJax.Hub.queue;
     /**
      * 加载编辑器
      */
@@ -40,16 +21,16 @@
         renderingConfig: {
             codeSyntaxHighlighting: true
         },
-        previewRender: function(plainText) {
+        /*previewRender: function(plainText) {
             var preview = document.getElementsByClassName("editor-preview-side")[0];
             preview.innerHTML = this.parent.markdown(plainText);
             preview.setAttribute('id','editor-preview');
             MathJax.Hub.Queue(["Typeset",MathJax.Hub,"editor-preview"]);
             return preview.innerHTML;
-        },
-        showIcons: ["code", "table"],
-        status: ["autosave", "lines", "words"],
-        tabSize: 4
+        },*/
+        //showIcons: ["code", "table"],
+        //status: ["autosave", "lines", "words"],
+        //tabSize: 4
     });
     /**
      * 方法来自https://gitee.com/supperzh/zb-blog/blob/master/src/main/resources/templates/article/publish.html#L255

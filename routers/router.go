@@ -16,6 +16,13 @@ func init() {
 	beego.Router("/role/allocate", &controllers.RoleController{}, "Post:Allocate")
 	beego.Router("/role/updateseq", &controllers.RoleController{}, "Post:UpdateSeq")
 
+	//标签路由
+	beego.Router("/tags/index", &controllers.TagsController{}, "*:Index")
+	beego.Router("/tags/datagrid", &controllers.TagsController{}, "Get,Post:DataGrid")
+	beego.Router("/tags/edit/?:id", &controllers.TagsController{}, "Get,Post:Edit")
+	beego.Router("/tags/delete", &controllers.TagsController{}, "Post:Delete")
+	beego.Router("/tags/updateUrl", &controllers.TagsController{}, "Post:UpdateUrl")
+
 	//资源路由
 	beego.Router("/resource/index", &controllers.ResourceController{}, "*:Index")
 	beego.Router("/resource/treegrid", &controllers.ResourceController{}, "POST:TreeGrid")
