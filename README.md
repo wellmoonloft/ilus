@@ -12,7 +12,7 @@
 
 轻快，简洁，功能强大，使用**Go语言**开发的博客系统
 
-本项目在功能上高度借鉴了[Halo](https://github.com/halo-dev/halo)，原本作者也是Halo的拥护者之一，
+本项目在功能上高度借鉴了[Halo](https://github.com/halo-dev/halo)，作者也是Halo的拥护者之一，
 只是因为Halo在API方面并不太重视，而我又非常需要API的功能，正好在学习beego，所以就照搬了Halo的部分功能，加上自己的需求开发了ilus
 
 

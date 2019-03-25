@@ -11,13 +11,13 @@ import (
 	"strings"
 )
 
-//TagsController 标签管理
-type TagsController struct {
+//CategoryController 分类管理
+type CategoryController struct {
 	BaseController
 }
 
 //Prepare 参考beego官方文档说明
-func (c *TagsController) Prepare() {
+func (c *CategoryController) Prepare() {
 	//先执行
 	c.BaseController.Prepare()
 	//如果一个Controller的多数Action都需要权限控制，则将验证放到Prepare
@@ -27,29 +27,29 @@ func (c *TagsController) Prepare() {
 	//c.checkLogin()
 }
 
-//Index 标签管理首页
-func (c *TagsController) Index() {
-	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 标签管理"
+//Index 分类管理首页
+func (c *CategoryController) Index() {
+	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 分类管理"
 	//是否显示更多查询条件的按钮
 	c.Data["showMoreQuery"] = false
 	//将页面左边菜单的某项激活
 	c.Data["activeSidebarUrl"] = c.URLFor(c.controllerName + "." + c.actionName)
 	c.setTpl()
 	c.LayoutSections = make(map[string]string)
-	c.LayoutSections["headcssjs"] = "tags/index_headcssjs.html"
-	c.LayoutSections["footerjs"] = "tags/index_footerjs.html"
+	c.LayoutSections["headcssjs"] = "category/index_headcssjs.html"
+	c.LayoutSections["footerjs"] = "category/index_footerjs.html"
 	//页面里按钮权限控制
-	c.Data["canEdit"] = c.checkActionAuthor("TagsController", "Edit")
-	c.Data["canDelete"] = c.checkActionAuthor("TagsController", "Delete")
+	c.Data["canEdit"] = c.checkActionAuthor("CategoryController", "Edit")
+	c.Data["canDelete"] = c.checkActionAuthor("CategoryController", "Delete")
 }
 
-// DataGrid 标签管理首页 表格获取数据
-func (c *TagsController) DataGrid() {
+// DataGrid 分类管理首页 表格获取数据
+func (c *CategoryController) DataGrid() {
 	//直接反序化获取json格式的requestbody里的值
-	var params models.TagsQueryParam
+	var params models.CategoryQueryParam
 	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
 	//获取数据列表和总数
-	data, total := models.TagsPageList(&params)
+	data, total := models.CategoryPageList(&params)
 	//定义返回的数据结构
 	result := make(map[string]interface{})
 	result["total"] = total
@@ -59,12 +59,12 @@ func (c *TagsController) DataGrid() {
 }
 
 //Edit 添加、编辑标签界面
-func (c *TagsController) Edit() {
+func (c *CategoryController) Edit() {
 	if c.Ctx.Request.Method == "POST" {
 		c.Save()
 	}
 	Id, _ := c.GetInt(":id", 0)
-	m := models.Tags{Id: Id}
+	m := models.Category{Id: Id}
 	if Id > 0 {
 		o := orm.NewOrm()
 		err := o.Read(&m)
@@ -73,15 +73,15 @@ func (c *TagsController) Edit() {
 		}
 	}
 	c.Data["m"] = m
-	c.setTpl("tags/edit.html", "shared/layout_pullbox.html")
+	c.setTpl("category/edit.html", "shared/layout_pullbox.html")
 	c.LayoutSections = make(map[string]string)
-	c.LayoutSections["footerjs"] = "tags/edit_footerjs.html"
+	c.LayoutSections["footerjs"] = "category/edit_footerjs.html"
 }
 
 //Save 添加、编辑页面 保存
-func (c *TagsController) Save() {
+func (c *CategoryController) Save() {
 	var err error
-	m := models.Tags{}
+	m := models.Category{}
 	//获取form里的值
 	if err = c.ParseForm(&m); err != nil {
 		c.jsonResult(utils.JRCodeFailed, "获取数据失败", m.Id)
@@ -104,9 +104,9 @@ func (c *TagsController) Save() {
 
 }
 
-func (c *TagsController) UpdateUrl() {
+func (c *CategoryController) UpdateUrl() {
 	Id, _ := c.GetInt("pk", 0)
-	oM, err := models.TagsOne(Id)
+	oM, err := models.CategoryOne(Id)
 	if err != nil || oM == nil {
 		c.jsonResult(utils.JRCodeFailed, "选择的数据无效", 0)
 	}
@@ -121,7 +121,7 @@ func (c *TagsController) UpdateUrl() {
 }
 
 //Delete 批量删除
-func (c *TagsController) Delete() {
+func (c *CategoryController) Delete() {
 	strs := c.GetString("ids")
 	ids := make([]int, 0, len(strs))
 	for _, str := range strings.Split(strs, ",") {
@@ -129,7 +129,7 @@ func (c *TagsController) Delete() {
 			ids = append(ids, id)
 		}
 	}
-	if num, err := models.TagsDelete(ids); err == nil {
+	if num, err := models.CategoryDelete(ids); err == nil {
 		c.jsonResult(utils.JRCodeSucc, fmt.Sprintf("成功删除 %d 项", num), 0)
 	} else {
 		c.jsonResult(utils.JRCodeFailed, "删除失败", 0)

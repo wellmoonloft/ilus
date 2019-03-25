@@ -50,11 +50,11 @@
         //同时要更新cookie里保存当前页码
         $.cookie('dataGrid.bs.table.pageNumber', 1, { expires: 1 });
     }
-    var editable4Seq = rms.getEditableParam('{{urlfor "TagsController.UpdateUrl"}}', null, true);
+    var editable4Seq = rms.getEditableParam('{{urlfor "CategoryController.UpdateUrl"}}', null, true);
     //bootstrap table data init
     function dataGridInit() {
         $dataGrid.bootstrapTable({
-            url: '{{ urlfor "TagsController.DataGrid"}}',
+            url: '{{ urlfor "CategoryController.DataGrid"}}',
             method: 'post',
             sidePagination: 'server', //服务器端用 server
             idField: 'Id',
@@ -92,7 +92,7 @@
                 sortable: true,
             }, {
                 field: 'Name',
-                title: '标签名称',
+                title: '分类名称',
                 align: 'center',
                 formatter: formatterWapBySpan,
                 cellStyle: function (value, row, index, field) {
@@ -100,7 +100,12 @@
                 }
             }, {
                 field: 'Url',
-                title: '标签路径（使用英文）',
+                title: '分类路径（使用英文）',
+                align: 'center',
+                sortable: true
+            }, {
+                field: 'Abs',
+                title: '分类描述',
                 align: 'center',
                 sortable: true
             }, {
@@ -162,11 +167,11 @@
     } 
 
     function EditFun(Id) {
-        var title = '添加标签';
+        var title = '添加分类';
         if (Id > 0) {
-            title = "编辑标签"
+            title = "编辑分类"
         }
-        var url = '{{ urlfor "TagsController.Edit"}}' + '/' + Id;
+        var url = '{{ urlfor "CategoryController.Edit"}}' + '/' + Id;
         layer.open({
             type: 2,
             title: title,
@@ -185,7 +190,7 @@
     }
 
     function DeleteFun() {
-        var url = '{{ urlfor "TagsController.Delete"}}';
+        var url = '{{ urlfor "CategoryController.Delete"}}';
         var rows = $dataGrid.bootstrapTable("getSelections")
         if (rows.length === 0) {
             layer.alert('请选择想要删除的项', { icon: 0, title: '提示' });

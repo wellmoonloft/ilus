@@ -23,6 +23,13 @@ func init() {
 	beego.Router("/tags/delete", &controllers.TagsController{}, "Post:Delete")
 	beego.Router("/tags/updateUrl", &controllers.TagsController{}, "Post:UpdateUrl")
 
+	//分类路由
+	beego.Router("/category/index", &controllers.CategoryController{}, "*:Index")
+	beego.Router("/category/datagrid", &controllers.CategoryController{}, "Get,Post:DataGrid")
+	beego.Router("/category/edit/?:id", &controllers.CategoryController{}, "Get,Post:Edit")
+	beego.Router("/category/delete", &controllers.CategoryController{}, "Post:Delete")
+	beego.Router("/category/updateUrl", &controllers.CategoryController{}, "Post:UpdateUrl")
+
 	//资源路由
 	beego.Router("/resource/index", &controllers.ResourceController{}, "*:Index")
 	beego.Router("/resource/treegrid", &controllers.ResourceController{}, "POST:TreeGrid")
