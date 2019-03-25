@@ -25,6 +25,16 @@
 
 ## 快速开始
 
+1. 安装go语言开发环境 [Golang v1.12.pkg](https://dl.google.com/go/go1.12.darwin-amd64.pkg)
+
+2. 安装beego：`go get github.com/astaxie/beego`
+
+3. 安装bee工具：`go get github.com/beego/bee`
+
+4. 安装mysql驱动：`go get -u github.com/go-sql-driver/mysql`
+
+5. 安装redis模块：`go get github.com/gomodule/redigo/redis`
+
 
 
 
