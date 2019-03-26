@@ -12,11 +12,12 @@
 
 Fast, concise, and powerful blogging system developed in Golang
 
-The idea of this project is inseparable from [Halo](https://github.com/halo-dev/halo) 
+The function of this project is located on Blog, CMS and WeChat miniprogram backend. 
 
-The reason of I developed this, it's because Halo's API is too less, and I rearly need these API, so I copied some of 
-Halo's functions and developed Ilus with my own needs
+The reason of I developed this, it is because I have been developing Wechat miniprogram recently, and I haven't found a 
+suitable one on the open source platform for a long time. 
 
+SO, I developed Inus an exercise project based on [sdrms](https://github.com/lhtzbj12/sdrms) use Golang.
 
 ## Quick start
 
