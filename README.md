@@ -12,8 +12,10 @@
 
 轻快，简洁，功能强大，使用**Go语言**开发的博客系统
 
-本项目在功能上高度借鉴了[Halo](https://github.com/halo-dev/halo)，作者也是Halo的拥护者之一，
-只是因为Halo在API方面并不太重视，而我又非常需要API的功能，正好在学习beego，所以就照搬了Halo的部分功能，加上自己的需求开发了ilus
+本项目的灵感来源于[Halo](https://github.com/halo-dev/halo)，功能定位为博客、CMS及微信小程序后台
+
+作者本身也是Halo的使用者，只是因为Halo在API方面并不太重视，而我又非常需要API的功能，正好近期在学习Golang，
+所以就基于[sdrms](https://github.com/lhtzbj12/sdrms)这个项目，加上自己的实际需求开发了ilus作为练习项目
 
 
 ## 快速开始
@@ -43,7 +45,6 @@ ilus 的诞生离不开下面这些项目：
 - [beego](https://github.com/astaxie/beego)：beego is an open-source, high-performance web framework for the Go programming language. 
 - [go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)：Go MySQL Driver is a MySQL driver for Go's (golang) database/sql package
 - [Redigo](https://github.com/gomodule/redigo)：Go client for Redis
-- [Halo](https://github.com/halo-dev/halo)：Halo 可能是最好的 Java 博客系统
 - [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor.
 - [sdrms](https://github.com/lhtzbj12/sdrms)：SDRMS是基于Beego开发的易用、易扩展、界面友好的轻量级功能权限管理系统
 

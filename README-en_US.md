@@ -12,9 +12,10 @@
 
 Fast, concise, and powerful blogging system developed in Golang
 
-The idea of this project fork heavily from [Halo](https://github.com/halo-dev/halo) 
+The idea of this project is inseparable from [Halo](https://github.com/halo-dev/halo) 
 
-The reason of I developed this, it's because Halo's API is too less, and I rearly need these API, so I copied some of Halo's functions and developed Ilus with my own needs
+The reason of I developed this, it's because Halo's API is too less, and I rearly need these API, so I copied some of 
+Halo's functions and developed Ilus with my own needs
 
 
 ## Quick start
