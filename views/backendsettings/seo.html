@@ -1,0 +1,77 @@
+<form method="post" class="form-horizontal" id="seoOptions">
+    <div class="box-body">
+        <div class="form-group">
+            <label for="keywords" class="col-lg-2 col-sm-4 control-label">关键词：
+                <span data-toggle="tooltip" data-placement="top" title=""
+                      style="cursor: pointer" data-original-title="多个关键词使用,隔开">
+                                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                            </span>
+            </label>
+            <div class="col-lg-4 col-sm-8">
+                <input type="text" class="form-control" id="keywords" name="seo_keywords"
+                       value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desc" class="col-lg-2 col-sm-4 control-label">博客描述：</label>
+            <div class="col-lg-4 col-sm-8">
+                <input type="text" class="form-control" id="desc" name="seo_desc" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="baiduToken" class="col-lg-2 col-sm-4 control-label">百度推送 token：
+                <span data-toggle="tooltip" data-placement="top" title=""
+                      style="cursor: pointer" data-original-title="百度站长平台获取">
+                                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                            </span>
+            </label>
+            <div class="col-lg-4 col-sm-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="baiduToken"
+                           name="seo_baidu_token" value="">
+                    <span class="input-group-btn">
+                                                    <button class="btn btn-default btn-flat" id="btn_push_baidu"
+                                                            onclick="pushAllToBaidu()" type="button">推送</button>
+                                                </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="blogVerificationGoogle" class="col-lg-2 col-sm-4 control-label">Google
+                站点验证：</label>
+            <div class="col-lg-4 col-sm-8">
+                <input type="text" class="form-control" id="blogVerificationGoogle"
+                       name="blog_verification_google" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="blogVerificationBing" class="col-lg-2 col-sm-4 control-label">Bing
+                站点验证：</label>
+            <div class="col-lg-4 col-sm-8">
+                <input type="text" class="form-control" id="blogVerificationBing"
+                       name="blog_verification_bing" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="blogVerificationBaidu" class="col-lg-2 col-sm-4 control-label">Baidu
+                站点验证：</label>
+            <div class="col-lg-4 col-sm-8">
+                <input type="text" class="form-control" id="blogVerificationBaidu"
+                       name="blog_verification_baidu" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="blogVerificationQihu" class="col-lg-2 col-sm-4 control-label">360
+                站点验证：</label>
+            <div class="col-lg-4 col-sm-8">
+                <input type="text" class="form-control" id="blogVerificationQihu"
+                       name="blog_verification_qihu" value="">
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <button type="button" class="btn btn-primary btn-sm "
+                onclick="saveOptions('seoOptions')">保存
+        </button>
+    </div>
+</form>

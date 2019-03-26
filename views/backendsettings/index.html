@@ -1,0 +1,59 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>系统设定
+        <small>修改我的头像、联系方式</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{urlfor "HomeController.Index"}}"><i class="fa fa-dashboard"></i> 首页</a>
+        </li>
+        <li class="active">系统设定</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content container-fluid">
+    <!-- 页面内容开始 -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#general" data-toggle="tab">常规设置</a></li>
+                    <li><a href="#seo" data-toggle="tab">SEO设置</a></li>
+                    <li><a href="#post" data-toggle="tab">文章设置</a></li>
+                    <li><a href="#comment" data-toggle="tab">评论设置</a></li>
+                    <li><a href="#attach" data-toggle="tab">附件设置</a></li>
+                    <li><a href="#admin" data-toggle="tab">后台设置</a></li>
+                    <li><a href="#email" data-toggle="tab">邮箱设置</a></li>
+                    <li><a href="#other" data-toggle="tab">其他设置</a></li>
+                    <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="general">
+                        {{template "backendsettings/general.html" .}}
+                    </div>
+                    <div class="tab-pane" id="seo">
+                        {{template "backendsettings/seo.html" .}}
+                    </div>
+                    <div class="tab-pane" id="post">
+                        {{template "backendsettings/post.html" .}}
+                    </div>
+                    <div class="tab-pane" id="comment">
+                        {{template "backendsettings/comment.html" .}}
+                    </div>
+                    <div class="tab-pane" id="attach">
+                        {{template "backendsettings/attach.html" .}}
+                    </div>
+                    <div class="tab-pane" id="admin">
+                        {{template "backendsettings/admin.html" .}}
+                    </div>
+                    <div class="tab-pane" id="email">
+                        {{template "backendsettings/email.html" .}}
+                    </div>
+                    <div class="tab-pane" id="other">
+                        {{template "backendsettings/other.html" .}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

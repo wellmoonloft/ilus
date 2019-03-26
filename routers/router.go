@@ -59,6 +59,9 @@ func init() {
 	//新建文章
 	beego.Router("/article/index", &controllers.ArticleController{}, "*:Index")
 
+	//系统设定
+	beego.Router("/backendsettings/index", &controllers.BackendSettingsController{}, "*:Index")
+
 	//首页
 	beego.Router("/home/index", &controllers.HomeController{}, "*:Index")
 	beego.Router("/home/login", &controllers.HomeController{}, "*:Login")

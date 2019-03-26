@@ -1,0 +1,51 @@
+<form method="post" class="form-horizontal" id="otherOptions">
+    <div class="box-body">
+        <div class="form-group">
+            <label class="col-lg-2 col-sm-4 control-label">API 服务：</label>
+            <div class="col-lg-4 col-sm-8 control-radio">
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="api_status" value="true" checked="">
+                    <div class="state p-primary">
+                        <label>启用</label>
+                    </div>
+                </div>
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="api_status" value="false">
+                    <div class="state p-primary">
+                        <label>禁用</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="apiToken" class="col-lg-2 col-sm-4 control-label">Api Token：</label>
+            <div class="col-lg-4 col-sm-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="apiToken" name="api_token"
+                           value="d61117ff5b91c49b427fbff0684dbef2">
+                    <span class="input-group-btn">
+                                                    <button class="btn btn-default btn-flat" id="btnUpdateToken"
+                                                            onclick="updateToken()" type="button">刷新</button>
+                                                </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="statisticsCode" class="col-lg-2 col-sm-4 control-label">统计代码：
+                <span data-toggle="tooltip" data-placement="top" title=""
+                      style="cursor: pointer" data-original-title="可以使用cnzz，百度，google等">
+                                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                            </span>
+            </label>
+            <div class="col-lg-4 col-sm-8">
+                                        <textarea class="form-control" rows="6" id="statisticsCode"
+                                                  name="statistics_code" style="resize: none"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <button type="button" class="btn btn-primary btn-sm "
+                onclick="saveOptions('otherOptions')">保存
+        </button>
+    </div>
+</form>

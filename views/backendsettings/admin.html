@@ -1,0 +1,93 @@
+<form method="post" class="form-horizontal" id="adminOptions">
+    <div class="box-body">
+        <div class="form-group">
+            <label class="col-lg-2 col-sm-4 control-label">启用 pjax：</label>
+            <div class="col-lg-4 col-sm-8 control-radio">
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="admin_pjax" value="true" checked="">
+                    <div class="state p-primary">
+                        <label>启用</label>
+                    </div>
+                </div>
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="admin_pjax" value="false">
+                    <div class="state p-primary">
+                        <label>禁用</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 col-sm-4 control-label">后台布局：</label>
+            <div class="col-lg-4 col-sm-8 control-radio">
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="admin_layout" value="" checked="">
+                    <div class="state p-primary">
+                        <label>正常布局</label>
+                    </div>
+                </div>
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="admin_layout" value="layout-boxed">
+                    <div class="state p-primary">
+                        <label>盒子布局</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="adminLayoutBoxedBackground" class="col-lg-2 col-sm-4 control-label">盒子布局背景：</label>
+            <div class="col-lg-4 col-sm-8">
+                <div class="input-group">
+                    <input type="text" class="form-control selectData"
+                           id="adminLayoutBoxedBackground" name="admin_layout_boxed_background"
+                           value="">
+                    <span class="input-group-btn">
+                                                    <button class="btn btn-default btn-flat" type="button"
+                                                            onclick="halo.layerModal('/admin/attachments/select?id=adminLayoutBoxedBackground','所有附件')">选择</button>
+                                                </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="adminTheme" class="col-lg-2 col-sm-4 control-label">后台主题：</label>
+            <div class="col-lg-4 col-sm-8">
+                <select class="form-control" id="adminTheme" name="admin_theme">
+                    <option value="skin-blue" selected="">默认主题</option>
+                    <option value="skin-blue-light">上蓝左白</option>
+                    <option value="skin-black">上白左黑</option>
+                    <option value="skin-black-light">上白左白</option>
+                    <option value="skin-green">上绿左黑</option>
+                    <option value="skin-green-light">上绿左白</option>
+                    <option value="skin-purple">上紫左黑</option>
+                    <option value="skin-purple-light">上紫左白</option>
+                    <option value="skin-red">上红左黑</option>
+                    <option value="skin-red-light">上红左白</option>
+                    <option value="skin-yellow">上黄左黑</option>
+                    <option value="skin-yellow-light">上黄左白</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 col-sm-4 control-label">侧边栏样式：</label>
+            <div class="col-lg-4 col-sm-8 control-radio">
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="sidebar_style" value="" checked="">
+                    <div class="state p-primary">
+                        <label>展开</label>
+                    </div>
+                </div>
+                <div class="pretty p-default p-round">
+                    <input type="radio" name="sidebar_style" value="sidebar-collapse">
+                    <div class="state p-primary">
+                        <label>收拢</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <button type="button" class="btn btn-primary btn-sm "
+                onclick="saveOptions('adminOptions')">保存
+        </button>
+    </div>
+</form>

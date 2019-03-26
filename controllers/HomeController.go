@@ -68,9 +68,11 @@ func (c *HomeController) DoLogin() {
 	} else {
 		c.jsonResult(utils.JRCodeFailed, "用户名或者密码错误", "")
 	}
+	//utils.LogInfo(username + "登陆成功" + time.Now().String())
 }
 func (c *HomeController) Logout() {
 	user := models.BackendUser{}
 	c.SetSession("backenduser", user)
 	c.pageLogin()
+	//utils.LogInfo(strings.TrimSpace(c.GetString("UserName")) + "已登出" + time.Now().String())
 }

@@ -14,5 +14,12 @@
 *.out
 
 /.idea/
-/logs/
 .DS_Store
+/logs/ilus.critical.log
+/logs/ilus.error.log
+/logs/ilus.debug.log
+/logs/ilus.alert.log
+/logs/ilus.emergency.log
+/logs/ilus.info.log
+/logs/ilus.warning.log
+/logs/ilus.notice.log
