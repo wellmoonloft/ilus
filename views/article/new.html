@@ -1,0 +1,118 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>文章编辑
+        <small>修改我的头像、联系方式</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{urlfor "HomeController.Index"}}"><i class="fa fa-dashboard"></i> 首页</a>
+        </li>
+        <li class="active">文章编辑</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content container-fluid">
+    <!-- 页面内容开始 -->
+    <div class="row">
+        <div class="col-md-9">
+            <div style="margin-bottom: 10px;">
+                <input type="text" class="form-control input-lg" id="postTitle" name="postTitle" placeholder="请输入文章标题"
+                       onblur="autoComplateUrl();" autocomplete="off">
+            </div>
+            <div style="display: block;margin-bottom: 10px;">
+                <span>固定链接： <a href="javascript:void(0)">https://api.beijingfun.com.cn/archives/<span
+                                id="postUrl"></span>/</a>
+                    <button class="btn btn-default btn-sm " id="btn_input_postUrl">编辑</button>
+                    <button class="btn btn-default btn-sm " id="btn_change_postUrl" onclick="urlOnBlurAuto()"
+                            style="display: none;">确定</button>
+                </span>
+            </div>
+            <div class="box box-solid" style="z-index: 9999">
+                <!-- Editor.md编辑器 -->
+                <div class="box-body pad">
+                    <div id="markdown-editor">
+                        <textarea id="editorarea" style="display:none;">{{.postvalue}}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="box box-solid">
+                <input type="hidden" name="Id" value="{{.m.Id}}">
+                <div class="box-header with-border">
+                    <h3 class="box-title">发布</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>开启评论</label>
+                        <select class="form-control" id="allowComment" name="allowComment">
+                            <option value="1">是</option>
+                            <option value="0">否</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>文章密码</label>
+                        <input type="password" name="ConfirmPwd" class="form-control" placeholder="">
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="button" class="btn btn-primary pull-left">保存草稿</button>
+                    <button type="submit" class="btn btn-primary pull-right">直接发布</button>
+                </div>
+            </div>
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">分类目录</h3>
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- 分类目录表 -->
+                    <table id="categorydataGrid"></table>
+                </div>
+
+            </div>
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">标签</h3>
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- 标签目录表 -->
+                    <table id="tagdataGrid"></table>
+                </div>
+            </div>
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">缩略图</h3>
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div>
+                        <img src="/static/upload/thumbnail/thumbnail.png" class="img-responsive img-thumbnail"
+                             id="selectImg" onclick="halo.layerModal('/admin/attachments/select?id=selectImg','所有附件')"
+                             style="cursor: pointer;">
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button onclick="removeThumbnail()" class="btn btn-default btn-sm ">移除</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

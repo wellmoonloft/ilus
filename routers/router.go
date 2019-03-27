@@ -56,8 +56,13 @@ func init() {
 	beego.Router("/usercenter/uploadimage", &controllers.UserCenterController{}, "Post:UploadImage")
 	beego.Router("/usercenter/passwordsave", &controllers.UserCenterController{}, "Post:PasswordSave")
 
-	//新建文章
+	//文章管理
+	beego.Router("/article/new", &controllers.ArticleController{}, "*:New")
 	beego.Router("/article/index", &controllers.ArticleController{}, "*:Index")
+	beego.Router("/article/datagrid", &controllers.ArticleController{}, "Get,Post:DataGrid")
+	beego.Router("/article/edit/?:id", &controllers.ArticleController{}, "Get,Post:Edit")
+	beego.Router("/article/delete", &controllers.ArticleController{}, "Post:Delete")
+	beego.Router("/article/updateUrl", &controllers.ArticleController{}, "Post:UpdateUrl")
 
 	//系统设定
 	beego.Router("/backendsettings/index", &controllers.BackendSettingsController{}, "*:Index")
