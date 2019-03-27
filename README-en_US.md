@@ -1,7 +1,10 @@
 ![](http://image.igerm.cn/img/20190325095035.png)
 
-> 
+> ！！！！！！ For Your Attention  ！！！！！
 
+> ！！！！！！ This Project Is Not Completed  ！！！！！
+
+> ！！！！！！ More function is not done  ！！！！！
 
 ------------------------------
 🇨🇳[简体中文](README.md) | 🇺🇸English
@@ -56,5 +59,8 @@ The birth of Halo is inseparable from the following projects：
 - [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor.
 - [sdrms](https://github.com/lhtzbj12/sdrms)：SDRMS is a lightweight functional privilege management system based on Beego, which is easy to use, easy to expand and user-friendly.
 
+
+## Code formats levels
+[Code formats](https://goreportcard.com/report/github.com/lhtzbj12/sdrms)
 
 

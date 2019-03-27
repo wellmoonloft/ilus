@@ -1,7 +1,8 @@
 ![](http://image.igerm.cn/img/20190325095035.png)
 
-> 
+> ！！！！！！  请注意，本项目未完成  ！！！！！！！！！
 
+> ！！！！！！    多个功能仍未实现  ！！！！！！！！！
 
 ------------------------------
 🇨🇳简体中文 | 🇺🇸[English](README-en_US.md)
@@ -53,4 +54,6 @@ ilus 的诞生离不开下面这些项目：
 - [sdrms](https://github.com/lhtzbj12/sdrms)：SDRMS是基于Beego开发的易用、易扩展、界面友好的轻量级功能权限管理系统
 
 
+## 代码质量查看
+[代码质量](https://goreportcard.com/report/github.com/lhtzbj12/sdrms)
 
