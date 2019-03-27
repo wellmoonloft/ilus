@@ -11,16 +11,16 @@
         showProcessingMessages: false,
         messageStyle: "none",
         tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a']
+            inlineMath: [['$', '$'], ["\\(", "\\)"]],
+            displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'a']
         }
     });
     //加载编辑器
     var easyMDE = new EasyMDE({
         element: document.getElementById("editorarea"),
         autoDownloadFontAwesome: false,
-        spellChecker:false,
+        spellChecker: false,
         autofocus: true,
         autosave: {
             enabled: true,
@@ -30,11 +30,11 @@
         renderingConfig: {
             codeSyntaxHighlighting: true
         },
-        previewRender: function(plainText) {
+        previewRender: function (plainText) {
             var preview = document.getElementsByClassName("editor-preview-side")[0];
             preview.innerHTML = this.parent.markdown(plainText);
-            preview.setAttribute('id','editor-preview');
-            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"editor-preview"]);
+            preview.setAttribute('id', 'editor-preview');
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, "editor-preview"]);
             return preview.innerHTML;
         },
         showIcons: ["code", "table"],
@@ -53,7 +53,6 @@
         //初始化分类目录表格
         categorydataGridInit();
     }
-
 
 
     //初始化分类目录函数
@@ -83,7 +82,7 @@
             sortName: 'Id',
             sortOrder: 'desc',
             rowAttributes: function (row, index) {
-                return { 'data-pk': row.Id }
+                return {'data-pk': row.Id}
             },
             columns: [{
                 field: 'state',
@@ -95,9 +94,9 @@
                 align: 'center',
                 formatter: formatterWapBySpan,
                 cellStyle: function (value, row, index, field) {
-                    return { classes: 'ellipsis' };
+                    return {classes: 'ellipsis'};
                 }
-            },  {
+            }, {
                 field: 'Abs',
                 title: '分类描述',
                 align: 'center',

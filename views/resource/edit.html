@@ -37,9 +37,11 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>UrlFor(参考Beego的
-                    <a href="https://beego.me/docs/mvc/controller/urlbuilding.md" target="_blank">Url构建</a>不需要双引号)</label>
-                <input type="text" id="UrlFor" name="UrlFor" class="form-control" placeholder="如：BackendUserController.Edit,:id,1" 
-                value="{{.m.UrlFor}}" onchange="urlForChange(this)">
+                    <a href="https://beego.me/docs/mvc/controller/urlbuilding.md"
+                       target="_blank">Url构建</a>不需要双引号)</label>
+                <input type="text" id="UrlFor" name="UrlFor" class="form-control"
+                       placeholder="如：BackendUserController.Edit,:id,1"
+                       value="{{.m.UrlFor}}" onchange="urlForChange(this)">
             </div>
         </div>
         <div class="col-md-6">
@@ -54,8 +56,9 @@
             <div class="form-group">
                 <label>由UrlFor的值经过路由规则处理后的地址</label>
                 <div class="input-group">
-                    <input type="text" id="LinkUrl" name="LinkUrl" class="form-control" placeholder="点击 验证 在这里显示UrlFor验证后的结果" value="{{.m.LinkUrl}}"
-                        readonly>
+                    <input type="text" id="LinkUrl" name="LinkUrl" class="form-control"
+                           placeholder="点击 验证 在这里显示UrlFor验证后的结果" value="{{.m.LinkUrl}}"
+                           readonly>
                     <span class="input-group-btn">
                         <button class="btn btn-info btn-flat" type="button" onclick="chkUrlFor()">验证</button>
                     </span>

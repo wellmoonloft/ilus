@@ -51,9 +51,7 @@
                         window.location.href='{{ urlfor "HomeController.Index"}}'                                         
                     } else {
                         layer.alert(re.msg, { icon: 2, title: '失败' })
-                        //$.getElementsByClassName("captcha-img").onclick()
-                        //document.getElementsByClassName("captcha-img").onclick()
-                        //document.getElementById("captcha_image").children[1].children[0].src=('%s%s.png?reload='+(new Date()).getTime())
+
                     }
                 });
                 return false;

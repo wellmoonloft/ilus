@@ -66,10 +66,10 @@
             queryParamsType: 'limit',
             queryParams: function (params) {
                 //params的自带参数类型由queryParamsType决定
-                params.UserNameLike =$.trim($('.searchForm input[name="UserName"]').val());
+                params.UserNameLike = $.trim($('.searchForm input[name="UserName"]').val());
                 params.RealNameLike = $.trim($('.searchForm input[name="RealName"]').val());
                 params.Mobile = $.trim($('.searchForm input[name="Mobile"]').val());
-                params.SearchStatus = $('.searchForm select[name="Status"]').selectpicker('val');           
+                params.SearchStatus = $('.searchForm select[name="Status"]').selectpicker('val');
                 return params;
             },
             pagination: true,
@@ -100,24 +100,24 @@
                 sortable: true,
             }, {
                 field: 'UserName',
-                title: '用户名',                     
+                title: '用户名',
             }, {
                 field: 'RealName',
-                title: '姓名',                     
+                title: '姓名',
             }, {
                 field: 'IsSuper',
                 title: '是否超级管理员',
-                formatter: sdtheme.showyes                     
+                formatter: sdtheme.showyes
             }, {
                 field: 'Mobile',
-                title: '手机号',                     
+                title: '手机号',
             }, {
                 field: 'Status',
-                title: '状态',   
-                formatter:sdtheme.showenable,                  
+                title: '状态',
+                formatter: sdtheme.showenable,
             }, {
                 field: 'operate',
-                title: '操作',              
+                title: '操作',
                 width: '100px',
                 formatter: function (value, row, index) {
                     var ret = [];
@@ -162,10 +162,11 @@
             }
         });
     }
+
     function GetStatusText(value) {
-        var texts = [{ Text: '锁定', Value: -1 }, { Text: '禁用', Value: 0 }, { Text: '启用', Value: 1 } ]
+        var texts = [{Text: '锁定', Value: -1}, {Text: '禁用', Value: 0}, {Text: '启用', Value: 1}]
         return sdtheme.showenum(value, texts);
-    }    
+    }
 
     ///用一个带有title值的span将值包裹起来
     function formatterWapBySpan(value, row, index) {
@@ -213,7 +214,7 @@
             btn: ['是', '否'], icon: 3, title: '请确认'
         }, function () {
             console.log(ids)
-            var dataValues = {ids:ids.join(',')};
+            var dataValues = {ids: ids.join(',')};
             $.sdpost(url, dataValues, function (re) {
                 if (re.code == 0) {
                     layer.msg(re.msg, {icon: 1, title: '成功'});

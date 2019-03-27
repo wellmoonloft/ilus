@@ -19,7 +19,8 @@ func init() {
 	//来个验证码
 	store := cache.NewMemoryCache()
 	cpt = captcha.NewWithFilter("/captcha/", store)
-	//cache.Verify
+	cpt.StdWidth = 100
+	cpt.StdHeight = 40
 }
 
 func (c *HomeController) Index() {

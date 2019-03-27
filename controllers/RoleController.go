@@ -160,6 +160,8 @@ func (c *RoleController) Allocate() {
 	}
 	c.jsonResult(0, "保存失败", "")
 }
+
+//更新数据
 func (c *RoleController) UpdateSeq() {
 	Id, _ := c.GetInt("pk", 0)
 	oM, err := models.RoleOne(Id)
