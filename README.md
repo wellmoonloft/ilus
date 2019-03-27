@@ -55,5 +55,5 @@ ilus 的诞生离不开下面这些项目：
 
 
 ## 代码质量查看
-[代码质量](https://goreportcard.com/report/github.com/lhtzbj12/sdrms)
+[代码质量](https://goreportcard.com/report/github.com/wellmoonloft/ilus)
 
