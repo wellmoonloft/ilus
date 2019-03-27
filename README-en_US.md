@@ -31,6 +31,14 @@ SO, I developed Inus an exercise project based on [sdrms](https://github.com/lht
 
 5. Install redis module for Golang：`go get github.com/gomodule/redigo/redis`
 
+6. Clone code, and change [mysql] in `app.conf`（ for default `is_cache=false`, you can make it `true` if you need ）
+
+7. Build a new schema in mysql，schema name must bee same with what you code in `app.conf`
+
+8. `run main.go`
+
+
+
 ## License
 
 [![license](https://img.shields.io/github/license/ruibaby/halo.svg?style=flat-square)](https://github.com/ruibaby/halo/blob/master/LICENSE)

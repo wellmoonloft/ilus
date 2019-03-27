@@ -30,7 +30,11 @@
 
 5. 安装redis模块：`go get github.com/gomodule/redigo/redis`
 
+6. 下载源码，并在`app.conf`中配置数据库信息（默认不开启redis缓存、可自行配置）
 
+7. 在mysql数据库中创建实例，实例名需与配置一致
+
+8. `run main.go`
 
 ## 许可证
 
