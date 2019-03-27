@@ -5,7 +5,8 @@
 <script type="text/javascript" src="/static/plugins/easymde/easymde.min.js"></script>
 <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-
+    var $categorydataGrid = $('#categorydataGrid');
+    //markdown数学公式设置
     MathJax.Hub.Config({
         showProcessingMessages: false,
         messageStyle: "none",
@@ -15,10 +16,7 @@
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a']
         }
     });
-
-    /**
-     * 加载编辑器
-     */
+    //加载编辑器
     var easyMDE = new EasyMDE({
         element: document.getElementById("editorarea"),
         autoDownloadFontAwesome: false,
@@ -43,19 +41,110 @@
         //status: ["autosave", "lines", "words"],
         //tabSize: 4
     });
-    /**
-     * 方法来自https://gitee.com/supperzh/zb-blog/blob/master/src/main/resources/templates/article/publish.html#L255
-     */
+
+
+    //初始化加载
     $(function () {
-        inlineAttachment.editors.codemirror4.attach(easyMDE.codemirror, {
-            progressText: "![上传中...]()",
-            uploadUrl: "/admin/attachments/upload"
-        });
+        pageInit();
     });
 
+    //初始化页面
+    function pageInit() {
+        //初始化分类目录表格
+        categorydataGridInit();
+    }
 
-    function removeThumbnail(){
-        $("#selectImg").attr("src","/static/upload/thumbnail/thumbnail.png");
+
+
+    //初始化分类目录函数
+    function categorydataGridInit() {
+        $categorydataGrid.bootstrapTable({
+            url: '{{ urlfor "CategoryController.DataGrid"}}',
+            method: 'post',
+            sidePagination: 'server', //服务器端用 server
+            idField: 'Id',
+            queryParamsType: 'limit',
+            queryParams: function (params) {
+                //params的自带参数类型由queryParamsType决定
+                params.NameLike = $('.searchForm input[name="Name"]').val();
+                return params;
+            },
+            pagination: true,
+            showRefresh: true,
+            showColumns: true,
+            toolbar: '#toolbar',
+            pageSize: 10,
+            pageList: [5, 10, 20, 100, 200],
+            paginationShowPageGo: true,//20170812 lht 扩展select跳转
+            paginationUseBSSelect: true,//20170812 lht 扩展select跳转 启用BoostrapSelect(页面须引用botstrap-select.min.js)
+            cookie: true,
+            classes: 'table table-bordered table-hover',
+            undefinedText: '',
+            sortName: 'Id',
+            sortOrder: 'desc',
+            rowAttributes: function (row, index) {
+                return { 'data-pk': row.Id }
+            },
+            columns: [{
+                field: 'state',
+                checkbox: true,
+                radio: false,
+            }, {
+                field: 'Name',
+                title: '分类名称',
+                align: 'center',
+                formatter: formatterWapBySpan,
+                cellStyle: function (value, row, index, field) {
+                    return { classes: 'ellipsis' };
+                }
+            },  {
+                field: 'Abs',
+                title: '分类描述',
+                align: 'center',
+                sortable: true
+            }],
+            onLoadSuccess: function (data) {
+                layer.closeAll('loading');
+                //
+                //CheboxUniform()
+            },
+            onSort: function (name, order) {
+                //alert('name:' + name + " order:" + order);
+            },
+            onPageChange: function () {
+                //layer.load();
+            },
+            onCheckAll: function (rows) {
+                //禁用删除需要勾选才能用的按钮
+                $(".table-btn-check-enable").removeAttr('disabled');
+            },
+            onCheck: function (rows) {
+                //禁用删除需要勾选才能用的按钮
+                $(".table-btn-check-enable").removeAttr('disabled');
+            },
+            onUncheck: function (rows) {
+                //禁用删除需要勾选才能用的按钮
+                if ($("#dataGrid").bootstrapTable("getSelections").length === 0) {
+                    $(".table-btn-check-enable").attr('disabled', 'disabled');
+                }
+            }, onUncheckAll: function () {
+                //禁用删除需要勾选才能用的按钮
+                if ($("#dataGrid").bootstrapTable("getSelections").length === 0) {
+                    $(".table-btn-check-enable").attr('disabled', 'disabled');
+                }
+            },
+            onLoadError: function (status) {
+                layer.alert('获取数据失败,错误代码：' + status);
+            }
+        });
+    }
+
+    ///用一个带有title值的span将值包裹起来
+    function formatterWapBySpan(value, row, index) {
+        if (value !== null) {
+            return '<span title="' + value + '">' + value + '</span>';
+        }
+        return "";
     }
 
 </script>
