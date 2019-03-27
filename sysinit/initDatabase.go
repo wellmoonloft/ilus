@@ -1,10 +1,10 @@
 package sysinit
 
 import (
-	_ "github.com/ilus/models"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/ilus/models"
 )
 
 //初始化数据连接

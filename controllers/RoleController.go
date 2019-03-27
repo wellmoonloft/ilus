@@ -2,11 +2,11 @@ package controllers
 
 import (
 	"encoding/json"
-	"github.com/astaxie/beego"
-	"github.com/ilus/utils"
-	"github.com/ilus/models"
-	"github.com/astaxie/beego/orm"
 	"fmt"
+	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
+	"github.com/ilus/models"
+	"github.com/ilus/utils"
 	"strconv"
 	"strings"
 )
