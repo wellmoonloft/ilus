@@ -40,7 +40,7 @@ SO, I developed Inus an exercise project based on [sdrms](https://github.com/lht
 
 8. `run main.go`
 
-
+>DB table will be auto build
 
 ## License
 
@@ -52,13 +52,23 @@ SO, I developed Inus an exercise project based on [sdrms](https://github.com/lht
 
 The birth of Halo is inseparable from the following projects：
 
-- [beego](https://github.com/astaxie/beego)：beego is an open-source, high-performance web framework for the Go programming language
-- [go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)：Go MySQL Driver is a MySQL driver for Go's (golang) database/sql package
-- [Redigo](https://github.com/gomodule/redigo)：Go client for Redis
-- [Halo](https://github.com/halo-dev/halo)：Halo Become the best blogging system using Java
-- [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor.
-- [sdrms](https://github.com/lhtzbj12/sdrms)：SDRMS is a lightweight functional privilege management system based on Beego, which is easy to use, easy to expand and user-friendly.
+*frontend：*
 
+- [AdminLTE](https://github.com/ColorlibHQ/AdminLTE)：AdminLTE - Free Premium Admin control Panel Theme Based On Bootstrap 3.x
+- [Bootstrap](https://github.com/twbs/bootstrap)：The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web
+- [Bootstrap-FileInput](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
+- [Bootstrap-Table](https://github.com/wenzhixin/bootstrap-table)：An extended table to integration with some of the most widely used CSS frameworks
+- [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor
+- [Layer](https://github.com/sentsin/layer)：The most used web pop-up layer solution in China 
+- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)：The iconic SVG, font, and CSS toolkit
+- [X-Editable](https://github.com/vitalets/x-editable)：In-place editing with Twitter Bootstrap, jQuery UI or pure jQuery
+
+
+*backend：*
+
+- [Beego](https://github.com/astaxie/beego)：beego is an open-source, high-performance web framework for the Go programming language 
+- [Go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)：Go MySQL Driver is a MySQL driver for Go's (golang) database/sql package
+- [Redigo](https://github.com/gomodule/redigo)：Go client for Redis
 
 ## Code formats levels
 [Code formats](https://goreportcard.com/report/github.com/wellmoonloft/ilus)

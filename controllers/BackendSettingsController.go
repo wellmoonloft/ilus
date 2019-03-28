@@ -28,9 +28,8 @@ func (c *BackendSettingsController) Index() {
 	c.LayoutSections["headcssjs"] = "backendsettings/index_headcssjs.html"
 	c.LayoutSections["footerjs"] = "backendsettings/index_footerjs.html"
 }
-func (c *BackendSettingsController) BasicInfoSave() {
-	Id := c.curUser.Id
-	oM, err := models.BackendSettingsOne(Id)
+func (c *BackendSettingsController) GeneralSave() {
+	oM, err := models.BackendSettingsOne(1)
 	if oM == nil || err != nil {
 		c.jsonResult(utils.JRCodeFailed, "数据无效，请刷新后重试", "")
 	}

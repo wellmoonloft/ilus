@@ -30,6 +30,13 @@ func init() {
 	beego.Router("/category/delete", &controllers.CategoryController{}, "Post:Delete")
 	beego.Router("/category/updateUrl", &controllers.CategoryController{}, "Post:UpdateUrl")
 
+	//评论路由
+	beego.Router("/comment/index", &controllers.CommentController{}, "*:Index")
+	beego.Router("/comment/datagrid", &controllers.CommentController{}, "Get,Post:DataGrid")
+	beego.Router("/comment/edit/?:id", &controllers.CommentController{}, "Get,Post:Edit")
+	beego.Router("/comment/delete", &controllers.CommentController{}, "Post:Delete")
+	beego.Router("/comment/updateUrl", &controllers.CommentController{}, "Post:UpdateUrl")
+
 	//资源路由
 	beego.Router("/resource/index", &controllers.ResourceController{}, "*:Index")
 	beego.Router("/resource/treegrid", &controllers.ResourceController{}, "POST:TreeGrid")
@@ -66,6 +73,7 @@ func init() {
 
 	//系统设定
 	beego.Router("/backendsettings/index", &controllers.BackendSettingsController{}, "*:Index")
+	beego.Router("/backendsettings/generalSave", &controllers.BackendSettingsController{}, "Post:GeneralSave")
 
 	//首页
 	beego.Router("/home/index", &controllers.HomeController{}, "*:Index")

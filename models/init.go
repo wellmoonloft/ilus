@@ -8,7 +8,7 @@ import (
 // init 初始化
 func init() {
 	orm.RegisterModel(new(BackendUser), new(Resource), new(Role), new(RoleResourceRel), new(RoleBackendUserRel),
-		new(Tags), new(Category), new(Article), new(ArticleCategoryTagsRel), new(BackendSettings))
+		new(Tags), new(Category), new(Article), new(ArticleCategoryTagsRel), new(BackendSettings), new(Comment))
 }
 
 // TableName 下面是统一的表名管理
@@ -65,4 +65,9 @@ func ArticleCategoryTagsRelTBName() string {
 // BackendSettingsTBName 常规系统设定表
 func BackendSettingsTBName() string {
 	return TableName("backend_settings")
+}
+
+// CommentTBName 常规系统设定表
+func CommentTBName() string {
+	return TableName("comment")
 }

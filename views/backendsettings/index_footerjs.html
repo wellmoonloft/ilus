@@ -1,9 +1,51 @@
-<!-- treetable插件 -->
-<script src="/static/plugins/jquery-treetable/js/jquery.treetable.js"></script>
-<!-- x-editable插件 -->
-<script src="/static/plugins/x-editable/js/bootstrap-editable.min.js"></script>
-<script type="text/javascript" src="/static/plugins/easymde/easymde.min.js"></script>
+<!-- 验证插件 -->
+<script src="/static/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="/static/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+<!-- 针对当前主题进行简单封装，精简代码 -->
+<script src="/static/sdtheme/scripts/sdvalidate.js"></script>
 <script>
 
+    //表单验证及AJAX提交
+    function validatebasicInfo() {
+        var $thisForm = $('#GeneralOptions');
+        $thisForm.sdvalidate({
+            rules: {
+                RealName: {
+                    maxlength: 16,
+                    required: true
+                },
+                Mobile: {
+                    mobile: true,
+                    maxlength: 16,
+                },
+                Email: {
+                    email: true,
+                    maxlength: 256,
+                },
+                ImageUrl: {
+                    required: true
+                },
+            },
+            messages: {
+                Mobile: {
+                    mobile: "请输入正确的手机号",
+                },
+            },
+            submitHandler: function (form) {
+                var url = '{{ urlfor "BackendSettingsController.GeneralSave"}}'
+                var data = $thisForm.serialize();
+                $.sdpost(url, data, function (re) {
+                    if (re.code === 0) {
+                        layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                            window.location.reload();
+                        });
+                    } else {
+                        layer.alert(re.msg, {icon: 2, title: '失败'})
+                    }
+                });
+                return false;
+            }
+        });
+    }
 
 </script>
