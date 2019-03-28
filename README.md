@@ -49,11 +49,26 @@
 
 ilus 的诞生离不开下面这些项目：
 
-- [beego](https://github.com/astaxie/beego)：beego is an open-source, high-performance web framework for the Go programming language. 
-- [go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)：Go MySQL Driver is a MySQL driver for Go's (golang) database/sql package
+*前端：*
+
+- [AdminLTE](https://github.com/ColorlibHQ/AdminLTE)：AdminLTE - Free Premium Admin control Panel Theme Based On Bootstrap 3.x
+- [Bootstrap](https://github.com/twbs/bootstrap)：The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web
+- [Bootstrap-FileInput](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
+- [Bootstrap-Table](https://github.com/wenzhixin/bootstrap-table)：An extended table to integration with some of the most widely used CSS frameworks
+- [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor
+- [Layer](https://github.com/sentsin/layer)：目前layer已经成为国内乃至全世界最多人使用的Web弹层解决方案
+- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)：The iconic SVG, font, and CSS toolkit
+- [X-Editable](https://github.com/vitalets/x-editable)：In-place editing with Twitter Bootstrap, jQuery UI or pure jQuery
+
+
+*后端：*
+
+- [Beego](https://github.com/astaxie/beego)：beego is an open-source, high-performance web framework for the Go programming language 
+- [Sdrms](https://github.com/lhtzbj12/sdrms)：SDRMS是基于Beego开发的易用、易扩展、界面友好的轻量级功能权限管理系统
+- [Go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)：Go MySQL Driver is a MySQL driver for Go's (golang) database/sql package
 - [Redigo](https://github.com/gomodule/redigo)：Go client for Redis
-- [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor.
-- [sdrms](https://github.com/lhtzbj12/sdrms)：SDRMS是基于Beego开发的易用、易扩展、界面友好的轻量级功能权限管理系统
+
+
 
 
 ## 代码质量查看
