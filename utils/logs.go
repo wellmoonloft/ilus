@@ -91,27 +91,28 @@ func log(level, v interface{}) {
 		default:
 			fileLogs.Debug(format, v)
 		}
-	}
-	switch level {
-	case "emergency":
-		consoleLogs.Emergency(format, v)
-	case "alert":
-		consoleLogs.Alert(format, v)
-	case "critical":
-		consoleLogs.Critical(format, v)
-	case "error":
-		consoleLogs.Error(format, v)
-	case "warning":
-		consoleLogs.Warning(format, v)
-	case "notice":
-		consoleLogs.Notice(format, v)
-	case "info":
-		consoleLogs.Info(format, v)
-	case "debug":
-		consoleLogs.Debug(format, v)
-	case "trace":
-		consoleLogs.Trace(format, v)
-	default:
-		consoleLogs.Debug(format, v)
+	} else {
+		switch level {
+		case "emergency":
+			consoleLogs.Emergency(format, v)
+		case "alert":
+			consoleLogs.Alert(format, v)
+		case "critical":
+			consoleLogs.Critical(format, v)
+		case "error":
+			consoleLogs.Error(format, v)
+		case "warning":
+			consoleLogs.Warning(format, v)
+		case "notice":
+			consoleLogs.Notice(format, v)
+		case "info":
+			consoleLogs.Info(format, v)
+		case "debug":
+			consoleLogs.Debug(format, v)
+		case "trace":
+			consoleLogs.Trace(format, v)
+		default:
+			consoleLogs.Debug(format, v)
+		}
 	}
 }
