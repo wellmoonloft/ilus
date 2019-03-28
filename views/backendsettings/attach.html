@@ -24,7 +24,7 @@
                        class="col-lg-2 col-sm-4 control-label">域名绑定：</label>
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="upyunOssDomain"
-                           name="upyun_oss_domain" value="">
+                           name="upyun_oss_domain" value="{{.m.AttachPath}}">
                 </div>
             </div>
             <div class="form-group">
@@ -72,7 +72,7 @@
                 <label for="qiniuDomain" class="col-lg-2 col-sm-4 control-label">域名：</label>
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="qiniuDomain" name="qiniu_domain"
-                           value="filedata.beijingfun.com.cn">
+                           value="{{.m.AttachDomain}}">
                 </div>
             </div>
             <div class="form-group">
@@ -81,7 +81,7 @@
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="qiniuAccessKey"
                            name="qiniu_access_key"
-                           value="bc8umWiw71egrim4ueOSQ48DhX5pZLh-bFPHnD6m">
+                           value="{{.m.AccessKey}}">
                 </div>
             </div>
             <div class="form-group">
@@ -90,21 +90,21 @@
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="qiniuSecretKey"
                            name="qiniu_secret_key"
-                           value="bnSe6RlJvclTxS27tcDtrYcgpTp1tMSWWHkPQgNK">
+                           value="{{.m.SecretKey}}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="qiniuBucket" class="col-lg-2 col-sm-4 control-label">Bucket：</label>
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="qiniuBucket" name="qiniu_bucket"
-                           value="filedata">
+                           value="{{.m.Bucket}}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="qiniuSmallUrl" class="col-lg-2 col-sm-4 control-label">处理策略：</label>
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="qiniuSamllUrl"
-                           name="qiniu_small_url" value="">
+                           name="qiniu_small_url" value="{{.m.Strategy}}">
                 </div>
             </div>
         </div>

@@ -7,7 +7,8 @@ import (
 
 // init 初始化
 func init() {
-	orm.RegisterModel(new(BackendUser), new(Resource), new(Role), new(RoleResourceRel), new(RoleBackendUserRel), new(Tags), new(Category), new(Article), new(ArticleCategoryTagsRel))
+	orm.RegisterModel(new(BackendUser), new(Resource), new(Role), new(RoleResourceRel), new(RoleBackendUserRel),
+		new(Tags), new(Category), new(Article), new(ArticleCategoryTagsRel), new(BackendSettings))
 }
 
 // TableName 下面是统一的表名管理
@@ -59,4 +60,9 @@ func ArticleTBName() string {
 // ArticleCategoryTagsRelTBName 角色与用户多对多关系表
 func ArticleCategoryTagsRelTBName() string {
 	return TableName("article_category_tags_rel")
+}
+
+// BackendSettingsTBName 常规系统设定表
+func BackendSettingsTBName() string {
+	return TableName("backend_settings")
 }
