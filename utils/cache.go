@@ -53,9 +53,8 @@ func SetCache(key string, value interface{}, timeout int) error {
 		LogError(err)
 		LogError("SetCache失败，key:" + key)
 		return err
-	} else {
-		return nil
 	}
+	return nil
 }
 
 //GetCache 读取缓存信息
@@ -99,9 +98,8 @@ func DelCache(key string) error {
 	err := cc.Delete(key)
 	if err != nil {
 		return errors.New("Cache删除失败")
-	} else {
-		return nil
 	}
+	return nil
 }
 
 // Encode 用gob进行数据编码

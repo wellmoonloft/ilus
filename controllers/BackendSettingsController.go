@@ -6,16 +6,20 @@ import (
 	"github.com/ilus/utils"
 )
 
+//BackendSettingsController 系统设置
 type BackendSettingsController struct {
 	BaseController
 }
 
+//Prepare 参考beego官方文档说明
 func (c *BackendSettingsController) Prepare() {
 	//先执行
 	c.BaseController.Prepare()
 	//如果一个Controller的所有Action都需要登录验证，则将验证放到Prepare
 	c.checkLogin()
 }
+
+//Index 系统设置首页
 func (c *BackendSettingsController) Index() {
 
 	m, err := models.BackendSettingsOne(1)
@@ -28,6 +32,8 @@ func (c *BackendSettingsController) Index() {
 	c.LayoutSections["headcssjs"] = "backendsettings/index_headcssjs.html"
 	c.LayoutSections["footerjs"] = "backendsettings/index_footerjs.html"
 }
+
+//GeneralSave 基础信息保存
 func (c *BackendSettingsController) GeneralSave() {
 	oM, err := models.BackendSettingsOne(1)
 	if oM == nil || err != nil {
@@ -49,6 +55,8 @@ func (c *BackendSettingsController) GeneralSave() {
 		c.jsonResult(utils.JRCodeSucc, "保存成功", m.Id)
 	}
 }
+
+//PasswordSave 密码保存
 func (c *BackendSettingsController) PasswordSave() {
 	Id := c.curUser.Id
 	oM, err := models.BackendSettingsOne(Id)
@@ -74,22 +82,5 @@ func (c *BackendSettingsController) PasswordSave() {
 		c.jsonResult(utils.JRCodeFailed, "保存失败", oM.Id)
 	} else {
 		c.jsonResult(utils.JRCodeSucc, "保存成功", oM.Id)
-	}
-}
-func (c *BackendSettingsController) UploadImage() {
-	//这里type没有用，只是为了演示传值
-	stype, _ := c.GetInt32("type", 0)
-	if stype > 0 {
-		f, h, err := c.GetFile("fileImageUrl")
-		if err != nil {
-			c.jsonResult(utils.JRCodeFailed, "上传失败", "")
-		}
-		defer f.Close()
-		filePath := "static/upload/" + h.Filename
-		// 保存位置在 static/upload, 没有文件夹要先创建
-		c.SaveToFile("fileImageUrl", filePath)
-		c.jsonResult(utils.JRCodeSucc, "上传成功", "/"+filePath)
-	} else {
-		c.jsonResult(utils.JRCodeFailed, "上传失败", "")
 	}
 }

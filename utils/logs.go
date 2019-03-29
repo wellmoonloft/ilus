@@ -16,6 +16,7 @@ var fileLogs *logs.BeeLogger
 //运行方式
 var runmode string
 
+//InitLogs 初始化日志配置
 func InitLogs() {
 	consoleLogs = logs.NewLogger(1)
 	consoleLogs.SetLogger(logs.AdapterConsole)

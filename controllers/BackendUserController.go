@@ -11,10 +11,12 @@ import (
 	"strings"
 )
 
+//BackendUserController 后台用户管理
 type BackendUserController struct {
 	BaseController
 }
 
+//Prepare 参考beego官方文档说明
 func (c *BackendUserController) Prepare() {
 	//先执行
 	c.BaseController.Prepare()
@@ -25,6 +27,8 @@ func (c *BackendUserController) Prepare() {
 	//c.checkLogin()
 
 }
+
+//Index 用户管理首页
 func (c *BackendUserController) Index() {
 	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 用户管理"
 	//是否显示更多查询条件的按钮
@@ -40,6 +44,8 @@ func (c *BackendUserController) Index() {
 	c.Data["canEdit"] = c.checkActionAuthor("BackendUserController", "Edit")
 	c.Data["canDelete"] = c.checkActionAuthor("BackendUserController", "Delete")
 }
+
+// DataGrid 标签管理首页 表格获取数据
 func (c *BackendUserController) DataGrid() {
 	//直接反序化获取json格式的requestbody里的值（要求配置文件里 copyrequestbody=true）
 	var params models.BackendUserQueryParam
@@ -85,6 +91,8 @@ func (c *BackendUserController) Edit() {
 	c.LayoutSections = make(map[string]string)
 	c.LayoutSections["footerjs"] = "backenduser/edit_footerjs.html"
 }
+
+//Save 添加、编辑页面 保存
 func (c *BackendUserController) Save() {
 	m := models.BackendUser{}
 	o := orm.NewOrm()
@@ -139,6 +147,8 @@ func (c *BackendUserController) Save() {
 		c.jsonResult(utils.JRCodeSucc, "保存成功", m.Id)
 	}
 }
+
+//Delete 批量删除
 func (c *BackendUserController) Delete() {
 	strs := c.GetString("ids")
 	ids := make([]int, 0, len(strs))

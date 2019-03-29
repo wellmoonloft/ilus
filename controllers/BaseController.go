@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-//基础结构体
+//BaseController 基础结构体
 type BaseController struct {
 	beego.Controller
 	controllerName string             //当前控制名称
