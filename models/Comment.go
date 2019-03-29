@@ -22,7 +22,8 @@ type Comment struct {
 	User    string `orm:"size(64)"`
 	UserUrl string `orm:"size(256)"`
 	Value   string `orm:"size(256)"`
-	Article string `orm:"size(256)"`
+	Article int
+	Comment int
 	Check   int
 	Date    time.Time `orm:"auto_now_add;type(datetime)"`
 }
