@@ -1,8 +1,6 @@
 <!-- 验证插件 -->
 <script src="/static/plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="/static/plugins/jquery-validation/localization/messages_zh.min.js"></script>
-<!-- 针对当前主题进行简单封装，精简代码 -->
-<script src="/static/ilus/js/ilusvalidate.js"></script>
 <!-- 文件上传插件 -->
 <script src="/static/plugins/ajaxfileupload.js"></script>
 <!-- 图片上传插件 -->
@@ -84,7 +82,7 @@
     //表单验证及AJAX提交
     function validatebasicInfo() {
         var $thisForm = $('#thisForm');
-        $thisForm.sdvalidate({
+        $thisForm.validate({
             rules: {
                 RealName: {
                     maxlength: 16,
@@ -127,7 +125,7 @@
     //表单验证及AJAX提交
     function validatepwdInfo() {
         var $thisForm = $('#pwdForm');
-        $thisForm.sdvalidate({
+        $thisForm.validate({
             rules: {
                 UserPwd: {
                     required: true
