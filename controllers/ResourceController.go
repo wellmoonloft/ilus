@@ -141,7 +141,7 @@ func (c *ResourceController) Edit() {
 func (c *ResourceController) Save() {
 	var err error
 	o := orm.NewOrm()
-	parent := &models.Resource{}
+	//parent := &models.Resource{}
 	m := models.Resource{}
 	parentId, _ := c.GetInt("Parent", 0)
 	//获取form里的值
@@ -150,7 +150,7 @@ func (c *ResourceController) Save() {
 	}
 	//获取父节点
 	if parentId > 0 {
-		parent, err = models.ResourceOne(parentId)
+		parent, err := models.ResourceOne(parentId)
 		if err == nil && parent != nil {
 			m.Parent = parent
 		} else {
