@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/ilus/models"
 	"github.com/ilus/utils"
@@ -21,7 +22,7 @@ func (c *BackendSettingsController) Prepare() {
 
 //Index 系统设置首页
 func (c *BackendSettingsController) Index() {
-
+	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 系统设定"
 	m, err := models.BackendSettingsOne(1)
 	if m == nil || err != nil {
 		c.pageError("数据无效，请刷新后重试")
