@@ -9,7 +9,7 @@
 
 <script>
     var $dataGrid = $('#dataGrid');
-    var $searchForm = $("#searchForm")
+    var CheckLike = 1
     //高亮显示id
     var highlightPk = null;
     //初始化加载
@@ -19,8 +19,6 @@
 
     //初始化页面
     function pageInit() {
-        //从cookie加载查询条件，传入参数为form id
-        ilus.loadSearchText('searchForm');
         //初始化表格
         dataGridInit();
         //绑定加载成功的事件，成功后高亮显示当前项
@@ -43,8 +41,6 @@
 
     //刷新并跳转至第一页
     function refreshToFirstPage() {
-        //表格刷新时，保存查询条件到cookie
-        ilus.saveSearchText('searchForm');
         //刷新并跳转至第1页
         $dataGrid.bootstrapTable('refresh', {pageNumber: 1});
         //同时要更新cookie里保存当前页码
@@ -63,7 +59,7 @@
             queryParamsType: 'limit',
             queryParams: function (params) {
                 //params的自带参数类型由queryParamsType决定
-                params.NameLike = $('.searchForm input[name="Name"]').val();
+                params.CheckLike = CheckLike;
                 return params;
             },
             pagination: true,
@@ -105,26 +101,43 @@
                 title: '评论内容',
                 align: 'center',
                 sortable: true
-            },{
+            }, {
                 field: 'Article',
                 title: '评论文章',
                 align: 'center',
                 sortable: true
-            },{
+            }, {
                 field: 'Date',
                 title: '评论日期',
                 align: 'center',
                 sortable: true
-            },  {
+            }, {
                 field: 'operate',
                 title: '操作',
-                width: '120px',
+                align: 'center',
+                width: '230px',
                 formatter: function (value, row, index) {
                     var ret = [];
                     ret.push('<div class="btn-group">')
-                    if ('{{.canDelete}}' === 'true') {
+                    if (CheckLike == 0) {
                         ret.push('<button class="btn btn-primary btn-xs"  onclick="EditFun(' + row.Id + ')">' +
-                            '<i class="fa fa-pencil"></i> 编辑</button>');
+                            '<i class="fa fa-pencil"></i> 回复</button>');
+                        ret.push('<button class="btn btn-danger btn-xs"  onclick="UpdateFun(' + row.Id + ')">' +
+                            '<i class="fa fa-trash"></i> 丢弃</button>');
+                    }
+                    if (CheckLike == 1) {
+                        ret.push('<button class="btn btn-primary btn-xs"  onclick="EditFun(' + row.Id + ')">' +
+                            '<i class="fa fa-pencil"></i> 通过</button>');
+                        ret.push('<button class="btn btn-info btn-xs"  onclick="EditFun(' + row.Id + ')">' +
+                            '<i class="fa fa-pencil"></i> 通过并回复</button>');
+                        ret.push('<button class="btn btn-danger btn-xs"  onclick="UpdateFun(' + row.Id + ')">' +
+                            '<i class="fa fa-trash"></i> 丢弃</button>');
+                    }
+                    if (CheckLike == 2) {
+                        ret.push('<button class="btn btn-primary btn-xs"  onclick="EditFun(' + row.Id + ')">' +
+                            '<i class="fa fa-pencil"></i> 还原</button>');
+                        ret.push('<button class="btn btn-danger btn-xs"  onclick="DeleteFun(' + row.Id + ')">' +
+                            '<i class="fa fa-trash"></i> 永久删除</button>');
                     }
                     ret.push('</div>')
                     return ret.join('');
@@ -197,6 +210,24 @@
         });
     }
 
+    function UpdateFun(Id) {
+
+        var url = '{{ urlfor "CommentController.Update"}}';
+        var data = "Id=" + Id + "&Check=" + CheckLike;
+        layer.confirm('您是否要丢弃所选的项？', {
+            btn: ['是', '否'], icon: 3, title: '请确认'
+        }, function () {
+            $.sdpost(url, data, function (re) {
+                if (re.code === 0) {
+                    layer.msg(re.msg, {icon: 1, title: '成功'});
+                    refresh();
+                } else {
+                    parent.layer.alert(re.msg, {icon: 2, title: '失败'})
+                }
+            });
+        })
+    }
+
     function DeleteFun() {
         var url = '{{ urlfor "CommentController.Delete"}}';
         var rows = $dataGrid.bootstrapTable("getSelections")
@@ -221,6 +252,19 @@
                 }
             });
         });
+    }
+
+    //查询
+    function IsSend(Check) {
+
+        CheckLike = Check;
+        //CheckLike = Check
+        //表格刷新时，保存查询条件到cookie
+        ilus.saveSearchText('searchForm');
+        //刷新并跳转至第1页
+        $dataGrid.bootstrapTable('refresh', {pageNumber: 1});
+        //同时要更新cookie里保存当前页码
+        $.cookie('dataGrid.bs.table.pageNumber', 1, {expires: 1});
     }
 
 </script>

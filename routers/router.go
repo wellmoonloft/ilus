@@ -35,7 +35,7 @@ func init() {
 	beego.Router("/comment/datagrid", &controllers.CommentController{}, "Get,Post:DataGrid")
 	beego.Router("/comment/edit/?:id", &controllers.CommentController{}, "Get,Post:Edit")
 	beego.Router("/comment/delete", &controllers.CommentController{}, "Post:Delete")
-	beego.Router("/comment/updateUrl", &controllers.CommentController{}, "Post:UpdateUrl")
+	beego.Router("/comment/update", &controllers.CommentController{}, "Post:Update")
 
 	//资源路由
 	beego.Router("/resource/index", &controllers.ResourceController{}, "*:Index")

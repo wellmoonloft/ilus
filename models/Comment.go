@@ -13,16 +13,17 @@ func (a *Comment) TableName() string {
 // CommentQueryParam 用于查询的类
 type CommentQueryParam struct {
 	BaseQueryParam
-	UserLike string //模糊查询
+	CheckLike int //查询
 }
 
 // Comment 标签
 type Comment struct {
 	Id      int
-	User    string    `orm:"size(64)"`
-	UserUrl string    `orm:"size(256)"`
-	Value   string    `orm:"size(256)"`
-	Article string    `orm:"size(256)"`
+	User    string `orm:"size(64)"`
+	UserUrl string `orm:"size(256)"`
+	Value   string `orm:"size(256)"`
+	Article string `orm:"size(256)"`
+	Check   int
 	Date    time.Time `orm:"auto_now_add;type(datetime)"`
 }
 
@@ -39,7 +40,9 @@ func CommentPageList(params *CommentQueryParam) ([]*Comment, int64) {
 	if params.Order == "desc" {
 		sortorder = "-" + sortorder
 	}
-	query = query.Filter("user__istartswith", params.UserLike)
+
+	//qs.Filter("profile__age", 18) // WHERE profile.age = 18
+	query = query.Filter("check", params.CheckLike)
 
 	total, _ := query.Count()
 	query.OrderBy(sortorder).Limit(params.Limit, params.Offset).All(&data)

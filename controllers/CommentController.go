@@ -104,15 +104,40 @@ func (c *CommentController) Save() {
 
 }
 
-//UpdateUrl 修改
-func (c *CommentController) UpdateUrl() {
+/*//BasicInfoSave 基础信息保存
+func (c *UserCenterController) BasicInfoSave() {
+	Id := c.curUser.Id
+	oM, err := models.BackendUserOne(Id)
+	if oM == nil || err != nil {
+		c.jsonResult(utils.JRCodeFailed, "数据无效，请刷新后重试", "")
+	}
+	m := models.BackendUser{}
+	//获取form里的值
+	if err = c.ParseForm(&m); err != nil {
+		c.jsonResult(utils.JRCodeFailed, "获取数据失败", m.Id)
+	}
+	oM.RealName = m.RealName
+	oM.Mobile = m.Mobile
+	oM.Email = m.Email
+	oM.Avatar = c.GetString("ImageUrl")
+	o := orm.NewOrm()
+	if _, err := o.Update(oM); err != nil {
+		c.jsonResult(utils.JRCodeFailed, "编辑失败", m.Id)
+	} else {
+		c.setBackendUser2Session(Id)
+		c.jsonResult(utils.JRCodeSucc, "保存成功", m.Id)
+	}
+}*/
+
+//Update 修改
+func (c *CommentController) Update() {
 	Id, _ := c.GetInt("pk", 0)
 	oM, err := models.CommentOne(Id)
 	if err != nil || oM == nil {
 		c.jsonResult(utils.JRCodeFailed, "选择的数据无效", 0)
 	}
-	/*	value := c.GetString("value")
-		oM.Url = value*/
+	m := models.Comment{}
+	oM.Check = m.Check
 	o := orm.NewOrm()
 	if _, err := o.Update(oM); err == nil {
 		c.jsonResult(utils.JRCodeSucc, "修改成功", oM.Id)
