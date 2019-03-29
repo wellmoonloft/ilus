@@ -11,10 +11,12 @@ import (
 	"strings"
 )
 
+//ArticleController 文章管理
 type ArticleController struct {
 	BaseController
 }
 
+//Prepare 参考beego官方文档说明
 func (c *ArticleController) Prepare() {
 	//先执行
 	c.BaseController.Prepare()
@@ -38,6 +40,7 @@ func (c *ArticleController) Index() {
 	c.Data["canDelete"] = c.checkActionAuthor("ArticleController", "Delete")
 }
 
+//New 新建文章
 func (c *ArticleController) New() {
 	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 写文章"
 	//需要权限控制
@@ -111,6 +114,7 @@ func (c *ArticleController) Save() {
 
 }
 
+//UpdateUrl 修改
 func (c *ArticleController) UpdateUrl() {
 	Id, _ := c.GetInt("pk", 0)
 	oM, err := models.ArticleOne(Id)

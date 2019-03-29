@@ -34,47 +34,47 @@ func InitLogs() {
 	}
 }
 
-//紧急
+//LogEmergency 紧急
 func LogEmergency(v interface{}) {
 	log("emergency", v)
 }
 
-//警报
+//LogAlert 警报
 func LogAlert(v interface{}) {
 	log("alert", v)
 }
 
-//严重
+//LogCritical 严重
 func LogCritical(v interface{}) {
 	log("critical", v)
 }
 
-//错误
+//LogError 错误
 func LogError(v interface{}) {
 	log("error", v)
 }
 
-//警告
+//LogWarning 警告
 func LogWarning(v interface{}) {
 	log("warning", v)
 }
 
-//通知
+//LogNotice 通知
 func LogNotice(v interface{}) {
 	log("notice", v)
 }
 
-//信息
+//LogInfo 信息
 func LogInfo(v interface{}) {
 	log("info", v)
 }
 
-//调试
+//LogDebug 调试
 func LogDebug(v interface{}) {
 	log("debug", v)
 }
 
-//运行方式
+//LogTrace 运行方式
 func LogTrace(v interface{}) {
 	log("trace", v)
 }

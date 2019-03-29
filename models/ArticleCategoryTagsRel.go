@@ -7,7 +7,7 @@ func (a *ArticleCategoryTagsRel) TableName() string {
 	return ArticleCategoryTagsRelTBName()
 }
 
-// RoleBackendUserRel 角色与用户关系
+// ArticleCategoryTagsRel 文章、分类、标签关系
 type ArticleCategoryTagsRel struct {
 	Id       int
 	Article  *Article  `orm:"rel(fk)"`  //外键

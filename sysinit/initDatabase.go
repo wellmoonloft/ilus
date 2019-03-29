@@ -3,11 +3,11 @@ package sysinit
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/go-sql-driver/mysql" //导入数据库驱动
 	_ "github.com/ilus/models"
 )
 
-//初始化数据连接
+//InitDatabase 初始化数据连接
 func InitDatabase() {
 	//读取配置文件，设置数据库参数
 	//数据库类别

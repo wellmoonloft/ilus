@@ -58,9 +58,9 @@ func (c *HomeController) DoLogin() {
 
 	username := strings.TrimSpace(c.GetString("UserName"))
 	userpwd := strings.TrimSpace(c.GetString("UserPwd"))
-	captcha_id := strings.TrimSpace(c.GetString("captcha_id"))
+	captchaID := strings.TrimSpace(c.GetString("captcha_id"))
 	Captcha := strings.TrimSpace(c.GetString("Captcha"))
-	if !cpt.Verify(captcha_id, Captcha) {
+	if !cpt.Verify(captchaID, Captcha) {
 		c.jsonResult(utils.JRCodeFailed, "验证码不正确", "")
 	}
 	if len(username) == 0 || len(userpwd) == 0 {

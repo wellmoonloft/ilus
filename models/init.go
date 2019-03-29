@@ -52,7 +52,7 @@ func CategoryTBName() string {
 	return TableName("category")
 }
 
-// CategoryTBName 获取 Category 对应的表名称
+// ArticleTBName 获取 Article 对应的表名称
 func ArticleTBName() string {
 	return TableName("article")
 }

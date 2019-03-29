@@ -104,6 +104,7 @@ func (c *CategoryController) Save() {
 
 }
 
+//UpdateUrl 修改
 func (c *CategoryController) UpdateUrl() {
 	Id, _ := c.GetInt("pk", 0)
 	oM, err := models.CategoryOne(Id)

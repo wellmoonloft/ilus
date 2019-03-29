@@ -89,7 +89,7 @@ func BackendSettingsOne(id int) (*BackendSettings, error) {
 	return &m, nil
 }
 
-// BackendSettingsByUserName 根据用户名密码获取单条
+// BackendSettingsOneByName 根据用户名密码获取单条
 func BackendSettingsOneByName(name string) (*BackendSettings, error) {
 	m := BackendSettings{}
 	err := orm.NewOrm().QueryTable(BackendSettingsTBName()).Filter("name", name).One(&m)

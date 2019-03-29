@@ -1,6 +1,6 @@
 package utils
 
-//返回格式
+//JsonResultCode 返回格式
 type JsonResultCode int
 
 //常量

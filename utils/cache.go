@@ -8,11 +8,12 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/cache"
-	_ "github.com/astaxie/beego/cache/redis"
+	_ "github.com/astaxie/beego/cache/redis" //导入redis驱动
 )
 
 var cc cache.Cache
 
+//InitCache 初始化缓存
 func InitCache() {
 	host := beego.AppConfig.String("cache::redis_host")
 	passWord := beego.AppConfig.String("cache::redis_password")
@@ -30,7 +31,7 @@ func InitCache() {
 	}
 }
 
-// SetCache
+// SetCache 设置缓存信息
 func SetCache(key string, value interface{}, timeout int) error {
 	data, err := Encode(value)
 	if err != nil {
@@ -57,6 +58,7 @@ func SetCache(key string, value interface{}, timeout int) error {
 	}
 }
 
+//GetCache 读取缓存信息
 func GetCache(key string, to interface{}) error {
 	if cc == nil {
 		return errors.New("cc is nil")
@@ -83,7 +85,7 @@ func GetCache(key string, to interface{}) error {
 	return err
 }
 
-// DelCache
+// DelCache 删除缓存信息
 func DelCache(key string) error {
 	if cc == nil {
 		return errors.New("cc is nil")
@@ -102,9 +104,7 @@ func DelCache(key string) error {
 	}
 }
 
-// Encode
-// 用gob进行数据编码
-//
+// Encode 用gob进行数据编码
 func Encode(data interface{}) ([]byte, error) {
 	buf := bytes.NewBuffer(nil)
 	enc := gob.NewEncoder(buf)
@@ -115,9 +115,7 @@ func Encode(data interface{}) ([]byte, error) {
 	return buf.Bytes(), nil
 }
 
-// Decode
-// 用gob进行数据解码
-//
+// Decode 用gob进行数据解码
 func Decode(data []byte, to interface{}) error {
 	buf := bytes.NewBuffer(data)
 	dec := gob.NewDecoder(buf)
