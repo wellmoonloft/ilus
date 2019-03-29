@@ -12,10 +12,12 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
+//ResourceController 菜单管理
 type ResourceController struct {
 	BaseController
 }
 
+//Prepare 参考beego官方文档说明
 func (c *ResourceController) Prepare() {
 	//先执行
 	c.BaseController.Prepare()
@@ -25,6 +27,8 @@ func (c *ResourceController) Prepare() {
 	//这里注释了权限控制，因此这里需要登录验证
 	c.checkLogin()
 }
+
+//Index 菜单管理首页
 func (c *ResourceController) Index() {
 	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 菜单管理"
 	//需要权限控制
@@ -225,6 +229,8 @@ func (c *ResourceController) CheckUrlFor() {
 		c.jsonResult(utils.JRCodeFailed, "解析失败", link)
 	}
 }
+
+//UpdateSeq 修改
 func (c *ResourceController) UpdateSeq() {
 
 	Id, _ := c.GetInt("pk", 0)

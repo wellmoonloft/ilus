@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+//基础结构体
 type BaseController struct {
 	beego.Controller
 	controllerName string             //当前控制名称
@@ -15,6 +16,7 @@ type BaseController struct {
 	curUser        models.BackendUser //当前用户信息
 }
 
+//Prepare 参考beego官方文档说明
 func (c *BaseController) Prepare() {
 	//附值
 	c.controllerName, c.actionName = c.GetControllerAndAction()

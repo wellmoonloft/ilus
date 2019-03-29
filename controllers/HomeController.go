@@ -11,6 +11,7 @@ import (
 
 var cpt *captcha.Captcha
 
+//HomeController 首页
 type HomeController struct {
 	BaseController
 }
@@ -23,19 +24,26 @@ func init() {
 	cpt.StdHeight = 40
 }
 
+//Index 首页
 func (c *HomeController) Index() {
 	//判断是否登录
 	c.checkLogin()
 	c.setTpl()
 	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 首页"
 }
+
+//Page404 404
 func (c *HomeController) Page404() {
 	c.setTpl()
 }
+
+//Error 其他错误
 func (c *HomeController) Error() {
 	c.Data["error"] = c.GetString(":error")
 	c.setTpl("home/error.html", "shared/layout_pullbox.html")
 }
+
+//Login 登陆页面
 func (c *HomeController) Login() {
 
 	c.LayoutSections = make(map[string]string)
@@ -44,6 +52,8 @@ func (c *HomeController) Login() {
 	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 后台登陆"
 	c.setTpl("home/login.html", "shared/layout_base.html")
 }
+
+//DoLogin 登陆操作
 func (c *HomeController) DoLogin() {
 
 	username := strings.TrimSpace(c.GetString("UserName"))
@@ -71,6 +81,8 @@ func (c *HomeController) DoLogin() {
 	}
 	//utils.LogInfo(username + "登陆成功" + time.Now().String())
 }
+
+//Logout 登出操作
 func (c *HomeController) Logout() {
 	user := models.BackendUser{}
 	c.SetSession("backenduser", user)

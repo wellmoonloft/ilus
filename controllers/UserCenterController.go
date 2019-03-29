@@ -7,16 +7,20 @@ import (
 	"strings"
 )
 
+//UserCenterController 后台用户管理
 type UserCenterController struct {
 	BaseController
 }
 
+//Prepare 参考beego官方文档说明
 func (c *UserCenterController) Prepare() {
 	//先执行
 	c.BaseController.Prepare()
 	//如果一个Controller的所有Action都需要登录验证，则将验证放到Prepare
 	c.checkLogin()
 }
+
+//Profile 后台用户管理首页
 func (c *UserCenterController) Profile() {
 	Id := c.curUser.Id
 	m, err := models.BackendUserOne(Id)
@@ -31,6 +35,8 @@ func (c *UserCenterController) Profile() {
 	c.LayoutSections["headcssjs"] = "usercenter/profile_headcssjs.html"
 	c.LayoutSections["footerjs"] = "usercenter/profile_footerjs.html"
 }
+
+//BasicInfoSave 基础信息保存
 func (c *UserCenterController) BasicInfoSave() {
 	Id := c.curUser.Id
 	oM, err := models.BackendUserOne(Id)
@@ -54,6 +60,8 @@ func (c *UserCenterController) BasicInfoSave() {
 		c.jsonResult(utils.JRCodeSucc, "保存成功", m.Id)
 	}
 }
+
+//PasswordSave 密码信息保存
 func (c *UserCenterController) PasswordSave() {
 	Id := c.curUser.Id
 	oM, err := models.BackendUserOne(Id)
@@ -82,6 +90,8 @@ func (c *UserCenterController) PasswordSave() {
 		c.jsonResult(utils.JRCodeSucc, "保存成功", oM.Id)
 	}
 }
+
+//UploadImage 头像信息保存
 func (c *UserCenterController) UploadImage() {
 	//这里type没有用，只是为了演示传值
 	stype, _ := c.GetInt32("type", 0)

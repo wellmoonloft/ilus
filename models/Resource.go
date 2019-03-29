@@ -56,7 +56,7 @@ func ResourceTreeGrid4Parent(id int) []*Resource {
 	}
 	var index = -1
 	//找出当前节点所在索引
-	for i, _ := range tree {
+	for i := range tree {
 		if tree[i].Id == id {
 			index = i
 			break
@@ -64,16 +64,16 @@ func ResourceTreeGrid4Parent(id int) []*Resource {
 	}
 	if index == -1 {
 		return tree
-	} else {
-		tree[index].HtmlDisabled = 1
-		for _, item := range tree[index+1:] {
-			if item.Level > tree[index].Level {
-				item.HtmlDisabled = 1
-			} else {
-				break
-			}
+	}
+	tree[index].HtmlDisabled = 1
+	for _, item := range tree[index+1:] {
+		if item.Level > tree[index].Level {
+			item.HtmlDisabled = 1
+		} else {
+			break
 		}
 	}
+
 	return tree
 }
 

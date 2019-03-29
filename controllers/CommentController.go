@@ -104,6 +104,7 @@ func (c *CommentController) Save() {
 
 }
 
+//UpdateUrl 修改
 func (c *CommentController) UpdateUrl() {
 	Id, _ := c.GetInt("pk", 0)
 	oM, err := models.CommentOne(Id)

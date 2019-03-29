@@ -7,7 +7,7 @@ import "time"
 import "strconv"
 import "strings"
 
-//将字符串加密成 md5
+//String2md5 将字符串加密成 md5
 func String2md5(str string) string {
 	data := []byte(str)
 	has := md5.Sum(data)

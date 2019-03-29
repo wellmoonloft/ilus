@@ -104,6 +104,7 @@ func (c *TagsController) Save() {
 
 }
 
+//UpdateUrl 修改
 func (c *TagsController) UpdateUrl() {
 	Id, _ := c.GetInt("pk", 0)
 	oM, err := models.TagsOne(Id)
