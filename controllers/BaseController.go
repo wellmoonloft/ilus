@@ -61,7 +61,7 @@ func (c *BaseController) checkActionAuthor(ctrlName, ActName string) bool {
 			return true
 		}
 		//遍历用户所负责的资源列表
-		for i, _ := range v.ResourceUrlForList {
+		for i := range v.ResourceUrlForList {
 			urlfor := strings.TrimSpace(v.ResourceUrlForList[i])
 			if len(urlfor) == 0 {
 				continue
