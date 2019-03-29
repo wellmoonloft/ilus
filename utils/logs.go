@@ -37,100 +37,81 @@ func InitLogs() {
 
 //LogEmergency 紧急
 func LogEmergency(v interface{}) {
-	log("emergency", v)
+	format := "%s"
+	if runmode == "debug" {
+		fileLogs.Emergency(format, v)
+	}
+	consoleLogs.Emergency(format, v)
 }
 
 //LogAlert 警报
 func LogAlert(v interface{}) {
-	log("alert", v)
+	format := "%s"
+	if runmode == "debug" {
+		fileLogs.Alert(format, v)
+	}
+	consoleLogs.Alert(format, v)
 }
 
 //LogCritical 严重
 func LogCritical(v interface{}) {
-	log("critical", v)
+	format := "%s"
+	if runmode == "debug" {
+		fileLogs.Critical(format, v)
+	}
+	consoleLogs.Critical(format, v)
 }
 
 //LogError 错误
 func LogError(v interface{}) {
-	log("error", v)
+	format := "%s"
+	if runmode == "debug" {
+		fileLogs.Error(format, v)
+	}
+	consoleLogs.Error(format, v)
 }
 
 //LogWarning 警告
 func LogWarning(v interface{}) {
-	log("warning", v)
+	format := "%s"
+	if runmode == "debug" {
+		fileLogs.Warning(format, v)
+	}
+	consoleLogs.Warning(format, v)
 }
 
 //LogNotice 通知
 func LogNotice(v interface{}) {
-	log("notice", v)
+	format := "%s"
+	if runmode == "debug" {
+		fileLogs.Notice(format, v)
+	}
+	consoleLogs.Notice(format, v)
 }
 
 //LogInfo 信息
 func LogInfo(v interface{}) {
-	log("info", v)
+	format := "%s"
+	if runmode == "debug" {
+		fileLogs.Info(format, v)
+	}
+	consoleLogs.Info(format, v)
 }
 
 //LogDebug 调试
 func LogDebug(v interface{}) {
-	log("debug", v)
+	format := "%s"
+	if runmode == "debug" {
+		fileLogs.Debug(format, v)
+	}
+	consoleLogs.Debug(format, v)
 }
 
 //LogTrace 运行方式
 func LogTrace(v interface{}) {
-	log("trace", v)
-}
-
-//Log 输出日志
-func log(level, v interface{}) {
 	format := "%s"
-	if level == "" {
-		level = "debug"
+	if runmode == "debug" {
+		fileLogs.Trace(format, v)
 	}
-	if runmode == "dev" {
-		switch level {
-		case "emergency":
-			fileLogs.Emergency(format, v)
-		case "alert":
-			fileLogs.Alert(format, v)
-		case "critical":
-			fileLogs.Critical(format, v)
-		case "error":
-			fileLogs.Error(format, v)
-		case "warning":
-			fileLogs.Warning(format, v)
-		case "notice":
-			fileLogs.Notice(format, v)
-		case "info":
-			fileLogs.Info(format, v)
-		case "debug":
-			fileLogs.Debug(format, v)
-		case "trace":
-			fileLogs.Trace(format, v)
-		default:
-			fileLogs.Debug(format, v)
-		}
-	} else {
-		switch level {
-		case "emergency":
-			consoleLogs.Emergency(format, v)
-		case "alert":
-			consoleLogs.Alert(format, v)
-		case "critical":
-			consoleLogs.Critical(format, v)
-		case "error":
-			consoleLogs.Error(format, v)
-		case "warning":
-			consoleLogs.Warning(format, v)
-		case "notice":
-			consoleLogs.Notice(format, v)
-		case "info":
-			consoleLogs.Info(format, v)
-		case "debug":
-			consoleLogs.Debug(format, v)
-		case "trace":
-			consoleLogs.Trace(format, v)
-		default:
-			consoleLogs.Debug(format, v)
-		}
-	}
+	consoleLogs.Trace(format, v)
 }
