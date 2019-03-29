@@ -50,10 +50,13 @@ ilus 的诞生离不开下面这些项目：
 
 *前端：*
 
-- [AdminLTE](https://github.com/ColorlibHQ/AdminLTE)：AdminLTE - Free Premium Admin control Panel Theme Based On Bootstrap 3.x
-- [Bootstrap](https://github.com/twbs/bootstrap)：The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web
+- [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：免费的又好看的后台模版
+- [Bootstrap](https://github.com/twbs/bootstrap)：这似乎不需要说明
 - [Bootstrap-FileInput](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
+- [Bootstrap-Select](https://github.com/snapappointments/bootstrap-select)：The jQuery plugin that brings select elements into the 21st century with intuitive multiselection, searching, and much more
 - [Bootstrap-Table](https://github.com/wenzhixin/bootstrap-table)：An extended table to integration with some of the most widely used CSS frameworks
+
+
 - [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor
 - [Layer](https://github.com/sentsin/layer)：The most used web pop-up layer solution in China 
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)：The iconic SVG, font, and CSS toolkit
