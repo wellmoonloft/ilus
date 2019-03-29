@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/orm"
 	"github.com/ilus/models"
 	"github.com/ilus/utils"
 	"strconv"
@@ -58,28 +57,8 @@ func (c *CommentController) DataGrid() {
 	c.ServeJSON()
 }
 
-//Edit 添加、编辑标签界面
-func (c *CommentController) Edit() {
-	if c.Ctx.Request.Method == "POST" {
-		c.Save()
-	}
-	Id, _ := c.GetInt(":id", 0)
-	m := models.Comment{Id: Id}
-	if Id > 0 {
-		o := orm.NewOrm()
-		err := o.Read(&m)
-		if err != nil {
-			c.pageError("数据无效，请刷新后重试")
-		}
-	}
-	c.Data["m"] = m
-	c.setTpl("comment/edit.html", "shared/layout_pullbox.html")
-	c.LayoutSections = make(map[string]string)
-	c.LayoutSections["footerjs"] = "comment/edit_footerjs.html"
-}
-
 //Save 添加、编辑页面 保存
-func (c *CommentController) Save() {
+/*func (c *CommentController) Save() {
 	var err error
 	m := models.Comment{}
 	//获取form里的值
@@ -102,47 +81,22 @@ func (c *CommentController) Save() {
 		}
 	}
 
-}
-
-/*//BasicInfoSave 基础信息保存
-func (c *UserCenterController) BasicInfoSave() {
-	Id := c.curUser.Id
-	oM, err := models.BackendUserOne(Id)
-	if oM == nil || err != nil {
-		c.jsonResult(utils.JRCodeFailed, "数据无效，请刷新后重试", "")
-	}
-	m := models.BackendUser{}
-	//获取form里的值
-	if err = c.ParseForm(&m); err != nil {
-		c.jsonResult(utils.JRCodeFailed, "获取数据失败", m.Id)
-	}
-	oM.RealName = m.RealName
-	oM.Mobile = m.Mobile
-	oM.Email = m.Email
-	oM.Avatar = c.GetString("ImageUrl")
-	o := orm.NewOrm()
-	if _, err := o.Update(oM); err != nil {
-		c.jsonResult(utils.JRCodeFailed, "编辑失败", m.Id)
-	} else {
-		c.setBackendUser2Session(Id)
-		c.jsonResult(utils.JRCodeSucc, "保存成功", m.Id)
-	}
 }*/
 
-//Update 修改
+//Update 批量操作文件
 func (c *CommentController) Update() {
-	Id, _ := c.GetInt("pk", 0)
-	oM, err := models.CommentOne(Id)
-	if err != nil || oM == nil {
-		c.jsonResult(utils.JRCodeFailed, "选择的数据无效", 0)
+	strs := c.GetString("ids")
+	action := c.GetString("action")
+	ids := make([]int, 0, len(strs))
+	for _, str := range strings.Split(strs, ",") {
+		if id, err := strconv.Atoi(str); err == nil {
+			ids = append(ids, id)
+		}
 	}
-	m := models.Comment{}
-	oM.Check = m.Check
-	o := orm.NewOrm()
-	if _, err := o.Update(oM); err == nil {
-		c.jsonResult(utils.JRCodeSucc, "修改成功", oM.Id)
+	if num, err := models.CommentUpate(ids, action); err == nil {
+		c.jsonResult(utils.JRCodeSucc, fmt.Sprintf("成功修改 %d 项", num), 0)
 	} else {
-		c.jsonResult(utils.JRCodeFailed, "修改失败", oM.Id)
+		c.jsonResult(utils.JRCodeFailed, "修改失败", 0)
 	}
 }
 

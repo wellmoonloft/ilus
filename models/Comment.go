@@ -66,3 +66,22 @@ func CommentDelete(ids []int) (int64, error) {
 	num, err := query.Filter("id__in", ids).Delete()
 	return num, err
 }
+
+// CommentUpate 批量操作
+func CommentUpate(ids []int, action string) (int64, error) {
+	var check int
+	if action == "Drop" {
+		check = 2
+	}
+	if action == "Pass" {
+		check = 0
+	}
+	if action == "Recall" {
+		check = 1
+	}
+	query := orm.NewOrm().QueryTable(CommentTBName())
+	num, err := query.Filter("id__in", ids).Update(orm.Params{
+		"Check": check,
+	})
+	return num, err
+}
