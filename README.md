@@ -40,9 +40,8 @@
 
 ## 许可证
 
-[![license](https://img.shields.io/github/license/ruibaby/halo.svg?style=flat-square)](https://github.com/ruibaby/halo/blob/master/LICENSE)
+[GNU.v3.0](https://github.com/wellmoonloft/ilus/blob/master/LICENSE)
 
-> ilus 使用 GPL-v3.0 协议开源，请尽量遵守开源协议，即便是在中国。
 
 ## 感谢
 

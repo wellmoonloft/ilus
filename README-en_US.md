@@ -39,7 +39,7 @@ The function of this project is located on Blog, CMS and WeChat miniprogram back
 
 ## License
 
-[![license](https://img.shields.io/github/license/ruibaby/halo.svg?style=flat-square)](https://github.com/ruibaby/halo/blob/master/LICENSE)
+[GNU.v3.0](https://github.com/wellmoonloft/ilus/blob/master/LICENSE)
 
 > ilus uses the GPL-v3.0 protocol to open source
 
