@@ -51,7 +51,7 @@ ilus 的诞生离不开下面这些项目：
 *前端：*
 
 - [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：免费的又好看的后台模版
-- [Bootstrap-FileInput.v3.1.3](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
+- [Bootstrap-FileInput.v5.0.0](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
 - [Bootstrap-Select.v1.13.9](https://github.com/snapappointments/bootstrap-select)：The jQuery plugin that brings select elements into the 21st century with intuitive multiselection, searching, and much more
 - [Bootstrap-Table.v1.11.1](https://github.com/wenzhixin/bootstrap-table)：An extended table to integration with some of the most widely used CSS frameworks
 - [EasyMDE.v2.5.1](https://github.com/Ionaru/easy-markdown-editor)：MarkDown编辑器，Fork自SimplyMDE
