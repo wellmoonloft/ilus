@@ -20,19 +20,19 @@
     //初始化页面
     function pageInit() {
         //从cookie加载查询条件，传入参数为form id
-        sdtheme.loadSearchText('searchForm');
+        ilus.loadSearchText('searchForm');
         //初始化表格
         dataGridInit();
         //绑定加载成功的事件，成功后高亮显示当前项
         $dataGrid.on('load-success.bs.table', function () {
             if (highlightPk !== null && typeof highlightPk !== 'undefined') {
-                sdtheme.highlight($dataGrid.find('tbody tr[data-pk="' + highlightPk + '"]'));
+                ilus.highlight($dataGrid.find('tbody tr[data-pk="' + highlightPk + '"]'));
             }
             //高亮显示一次后失效
             highlightPk = null;
         });
         //保持搜索条件面板状态
-        sdtheme.searchPanelStatusInit('searchpanelbtn');
+        ilus.searchPanelStatusInit('searchpanelbtn');
     };
 
     //刷新当前页
@@ -44,7 +44,7 @@
     //刷新并跳转至第一页
     function refreshToFirstPage() {
         //表格刷新时，保存查询条件到cookie
-        sdtheme.saveSearchText('searchForm');
+        ilus.saveSearchText('searchForm');
         //刷新并跳转至第1页
         $dataGrid.bootstrapTable('refresh', {pageNumber: 1});
         //同时要更新cookie里保存当前页码

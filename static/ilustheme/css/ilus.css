@@ -1,18 +1,5 @@
 @charset "UTF-8";
-/*!
- * Copyright (C) Corporation. All rights reserved.
- *
- * Author      :  lihaitao
- * Email        : lhtzbj12@126.com
- * Create Date  : 2017-11-28
- * Description  : 整合时对框架自己定义的样式
- * Version      : V0.0.2
- *
- * Revision History:
- *      Date         Author               Description
- *      2017-11-28   lihaitao               create
- *
-*/
+
 .searchForm .box-tools {
   margin-top: 8px; }
 .searchForm input {
@@ -125,5 +112,3 @@
 
 .padding-bottom-25 {
   padding-bottom: 25px; }
-
-/*# sourceMappingURL=sdtheme.css.map */

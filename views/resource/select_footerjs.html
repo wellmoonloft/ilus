@@ -67,7 +67,7 @@
 
     function GetRtypeText(value) {
         var texts = [{Text: '区域', Value: 0}, {Text: '菜单', Value: 1}, {Text: '按钮', Value: 2}]
-        return sdtheme.showenum(value, texts);
+        return ilus.showenum(value, texts);
     }
 
     //获取选择项
@@ -99,15 +99,15 @@
             column: 1,//在第2列单元格形成树结构
             onNodeCollapse: function () {
                 //保存展开的节点id到cookie
-                sdtheme.saveExpandStatus('treeGrid');
+                ilus.saveExpandStatus('treeGrid');
             },
             onNodeExpand: function () {
                 //保存展开的节点id到cookie
-                sdtheme.saveExpandStatus('treeGrid');
+                ilus.saveExpandStatus('treeGrid');
             },
         });
         //从cookie里读取展开的节点id数据并使用
-        sdtheme.loadExpandStatus('treeGrid');
+        ilus.loadExpandStatus('treeGrid');
         //全选 单选初始化
         rms.chkAllSingleInit("#treeGrid .chkAll", "#treeGrid .chkSingle");
         //

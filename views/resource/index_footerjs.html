@@ -91,15 +91,15 @@
             clickableNodeNames: false,
             onNodeCollapse: function () {
                 //保存展开的节点id到cookie
-                sdtheme.saveExpandStatus('treeGrid');
+                ilus.saveExpandStatus('treeGrid');
             },
             onNodeExpand: function () {
                 //保存展开的节点id到cookie
-                sdtheme.saveExpandStatus('treeGrid');
+                ilus.saveExpandStatus('treeGrid');
             },
         });
         //从cookie里读取展开的节点id数据并使用
-        sdtheme.loadExpandStatus('treeGrid');
+        ilus.loadExpandStatus('treeGrid');
         /*$treeGrid.colResizable({
             liveDrag: true,
             gripInnerHtml: "<div class='grip'></div>",
@@ -125,7 +125,7 @@
                 $treeGrid.treetable('reveal', highlightPk);
             }
             //调用高亮显示
-            sdtheme.highlight($treeGrid.find('tr[data-tt-id="' + highlightPk + '"]'));
+            ilus.highlight($treeGrid.find('tr[data-tt-id="' + highlightPk + '"]'));
             //高亮一次后清除
             highlightPk = null;
         }
@@ -133,7 +133,7 @@
 
     function GetRtypeText(value) {
         var texts = [{Text: '区域', Value: 0}, {Text: '菜单', Value: 1}, {Text: '按钮', Value: 2}]
-        return sdtheme.showenum(value, texts);
+        return ilus.showenum(value, texts);
     }
 
     //初始化顺序可编辑

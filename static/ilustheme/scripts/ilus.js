@@ -1,7 +1,4 @@
-﻿/*!
- * 用于当前主题通过的方法
- * Created by lihaitao on 2017-7-10.
- */
+﻿
 layer.ready(function () {
     layer.config({
         isOutAnim: false,
@@ -10,10 +7,7 @@ layer.ready(function () {
     });
 });
 
-/**
- * Created by lihaitao on 2017-7-11.
- */
-var sdtheme = function () {
+var ilus = function () {
     showstr = function (str, replace) {
         if (str === null || typeof (str) === "undefined") {
             if (typeof (replace) === 'undefined') {
@@ -337,5 +331,5 @@ var sdtheme = function () {
 }();
 
 jQuery(document).ready(function () {
-    sdtheme.init()
+    ilus.init()
 });
