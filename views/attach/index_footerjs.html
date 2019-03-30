@@ -4,21 +4,29 @@
 
 <script>
 
-
     $('#uploadImg').fileinput({
         language: 'zh',
-        uploadUrl: '/admin/attachments/upload',
+        uploadUrl: '{{ urlfor "AttachController.UploadFile" }}',
         uploadAsync: true,
         allowedFileExtensions: ['jpg','gif','png','jpeg','svg','psd'],
         maxFileCount: 100,
         enctype : 'multipart/form-data',
-        showClose: false
-    }).on("filebatchuploadcomplete",function (event, files, extra) {
-        $("#uploadForm").hide(400);
-        halo.showMsgAndRedirect('上传成功！','success',1000,'/admin/attachments',"true");
+        autoOrientImage:false,
+        showClose: false,
+        multiple:true,
+        uploadExtraData: {
+            'uploadToken': 'SOME-TOKEN', // for access control / security
+        },
+    }).on('filebatchuploadcomplete', function(event, preview, config, tags, extraData) {
+        //$('#uploadImg').fileinput.clean()
+        $("#uploadForm").hide(400)
+        console.log('File Batch Uploaded', preview, config, tags, extraData)
     });
+
+
     $("#showForm").click(function(){
-        $("#uploadForm").slideToggle(400);
+        //$('#uploadImg').fileinput.clean()
+        $("#uploadForm").slideToggle(400)
     });
 
 

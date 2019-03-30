@@ -11,11 +11,11 @@
 
 ## 简介
 
-**ilus** [爱沙尼亚语]，意思是漂亮
+**ilus** 【爱沙尼亚语】，意思是漂亮
 
-使用**Go语言**开发的博客系统，功能和外观模仿[Halo](https://github.com/halo-dev/halo)开发
+使用**Go语言**开发的博客系统，博客部分的功能和外观模仿[Halo](https://github.com/halo-dev/halo)开发
 
-本项目的功能定位为博客、CMS及微信小程序后台[已去掉<IE9的支持]
+本项目的功能定位为博客、CMS及微信小程序后台【已去掉<IE9的支持】
 
 
 
@@ -67,7 +67,7 @@ ilus 使用的开源项目：
 - [Beego.v1.11.1](https://github.com/astaxie/beego)：基于Go语言的web框架
 - [Go-sql-driver/mysql.v1.4.1](https://github.com/go-sql-driver/mysql)：基于Go语言的Mysql驱动
 - [Redigo.v1.7.0](https://github.com/gomodule/redigo)：基于Go语言的Redis模块
-
+- [Imaging.v1.6.0](https://github.com/disintegration/imaging)：基于Go语言的图片处理工具
 
 
 
