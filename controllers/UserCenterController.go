@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/ilus/models"
 	"github.com/ilus/utils"
@@ -22,6 +23,7 @@ func (c *UserCenterController) Prepare() {
 
 //Profile 后台用户管理首页
 func (c *UserCenterController) Profile() {
+	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 个人信息"
 	Id := c.curUser.Id
 	m, err := models.BackendUserOne(Id)
 	if m == nil || err != nil {

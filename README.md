@@ -49,20 +49,22 @@ ilus 的诞生离不开下面这些项目：
 
 *前端：*
 
-- [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：免费的又好看的后台模版
-- [Bootstrap-FileInput.v5.0.0](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
-- [Bootstrap-Select.v1.13.9](https://github.com/snapappointments/bootstrap-select)：The jQuery plugin that brings select elements into the 21st century with intuitive multiselection, searching, and much more
-- [Bootstrap-Table.v1.11.1](https://github.com/wenzhixin/bootstrap-table)：An extended table to integration with some of the most widely used CSS frameworks
-- [EasyMDE.v2.5.1](https://github.com/Ionaru/easy-markdown-editor)：MarkDown编辑器，Fork自SimplyMDE
+- [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：使用非常广泛的后台模版
+- [Bootstrap-FileInput.v5.0.0](https://github.com/kartik-v/bootstrap-fileinput)：Bootstrap的图片上传插件
+- [Bootstrap-Select.v1.13.9](https://github.com/snapappointments/bootstrap-select)：Bootstrap的下拉菜单插件
+- [Bootstrap-Table.v1.11.1](https://github.com/wenzhixin/bootstrap-table)：Bootstrap的表格插件
+- [EasyMDE.v2.5.1](https://github.com/Ionaru/easy-markdown-editor)：MarkDown编辑器，源自SimplyMDE
+- [jQuery-Validation.v1.19.0](https://github.com/jquery-validation/jquery-validation)：jQuery验证插件
+- [jQuery-treetable.v3.2.0](https://github.com/ludo/jquery-treetable)：jQuery动态树状表格插件
 - [Layer.v3.1.0](https://github.com/sentsin/layer)：国内最流行的弹出插件 
-- [X-Editable.v1.5.3](https://github.com/vitalets/x-editable)：In-place editing with Twitter Bootstrap, jQuery UI or pure jQuery
+- [X-Editable.v1.5.3](https://github.com/vitalets/x-editable)：在页面上创建可编辑元素，编辑模式包括弹出和行内模式。
 
 
 *后端：*
 
-- [Beego.v1.11.1](https://github.com/astaxie/beego)：beego is an open-source, high-performance web framework for the Go programming language 
-- [Go-sql-driver/mysql.v1.4.1](https://github.com/go-sql-driver/mysql)：Go MySQL Driver is a MySQL driver for Go's (golang) database/sql package
-- [Redigo.v1.7.0](https://github.com/gomodule/redigo)：Go client for Redis
+- [Beego.v1.11.1](https://github.com/astaxie/beego)：基于Go语言的web框架
+- [Go-sql-driver/mysql.v1.4.1](https://github.com/go-sql-driver/mysql)：基于Go语言的Mysql驱动
+- [Redigo.v1.7.0](https://github.com/gomodule/redigo)：基于Go语言的Redis模块
 
 
 
