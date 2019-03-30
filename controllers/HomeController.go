@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/cache"
 	"github.com/astaxie/beego/utils/captcha"
 	"github.com/ilus/models"
 	"github.com/ilus/utils"
@@ -16,13 +15,13 @@ type HomeController struct {
 	BaseController
 }
 
-func init() {
+/*func init() {
 	//来个验证码
 	store := cache.NewMemoryCache()
 	cpt = captcha.NewWithFilter("/captcha/", store)
 	cpt.StdWidth = 100
 	cpt.StdHeight = 40
-}
+}*/
 
 //Index 首页
 func (c *HomeController) Index() {
@@ -58,11 +57,11 @@ func (c *HomeController) DoLogin() {
 
 	username := strings.TrimSpace(c.GetString("UserName"))
 	userpwd := strings.TrimSpace(c.GetString("UserPwd"))
-	captchaID := strings.TrimSpace(c.GetString("captcha_id"))
+	/*captchaID := strings.TrimSpace(c.GetString("captcha_id"))
 	Captcha := strings.TrimSpace(c.GetString("Captcha"))
 	if !cpt.Verify(captchaID, Captcha) {
 		c.jsonResult(utils.JRCodeFailed, "验证码不正确", "")
-	}
+	}*/
 	if len(username) == 0 || len(userpwd) == 0 {
 		c.jsonResult(utils.JRCodeFailed, "用户名和密码不正确", "")
 	}
