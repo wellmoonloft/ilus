@@ -1,0 +1,25 @@
+<!-- bootstrap-fileinput插件 -->
+<script src="/static/plugins/bootstrap-fileinput/js/fileinput.js"></script>
+<script src="/static/plugins/bootstrap-fileinput/js/locales/zh.js" type="text/javascript"></script>
+
+<script>
+
+
+    $('#uploadImg').fileinput({
+        language: 'zh',
+        uploadUrl: '/admin/attachments/upload',
+        uploadAsync: true,
+        allowedFileExtensions: ['jpg','gif','png','jpeg','svg','psd'],
+        maxFileCount: 100,
+        enctype : 'multipart/form-data',
+        showClose: false
+    }).on("filebatchuploadcomplete",function (event, files, extra) {
+        $("#uploadForm").hide(400);
+        halo.showMsgAndRedirect('上传成功！','success',1000,'/admin/attachments',"true");
+    });
+    $("#showForm").click(function(){
+        $("#uploadForm").slideToggle(400);
+    });
+
+
+</script>

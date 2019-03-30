@@ -11,9 +11,11 @@
 
 ## Introduction
 
-**ilus** [Estonian], means beauty. 
+**ilus** [Estonian], means beauty 
 
-Fast, concise, and powerful blogging system developed in Golang
+Blogging system developed in Golang
+
+Function&UI is from [Halo](https://github.com/halo-dev/halo)
 
 The function of this project is located on Blog, CMS and WeChat miniprogram backend
 
@@ -47,7 +49,7 @@ Do not support < IE9
 
 ## Thanks
 
-The birth of Halo is inseparable from the following projects：
+ilus used open source projects list:
 
 *frontend：*
 

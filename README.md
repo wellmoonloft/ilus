@@ -11,9 +11,9 @@
 
 ## 简介
 
-**ilus** [爱沙尼亚语]，意为靓！
+**ilus** [爱沙尼亚语]，意思是漂亮
 
-轻快，简洁，功能强大，使用**Go语言**开发的博客系统
+使用**Go语言**开发的博客系统，功能和外观模仿[Halo](https://github.com/halo-dev/halo)开发
 
 本项目的功能定位为博客、CMS及微信小程序后台[已去掉<IE9的支持]
 
@@ -46,21 +46,21 @@
 
 ## 感谢
 
-ilus 的诞生离不开下面这些项目：
+ilus 使用的开源项目：
 
 *前端：*
 
-- [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：使用非常广泛的后台模版
-- [Bootstrap-FileInput.v5.0.0](https://github.com/kartik-v/bootstrap-fileinput)：Bootstrap的图片上传插件
-- [Bootstrap-Select.v1.13.9](https://github.com/snapappointments/bootstrap-select)：Bootstrap的下拉菜单插件
-- [Bootstrap-Table.v1.11.1](https://github.com/wenzhixin/bootstrap-table)：Bootstrap的表格插件
-- [EasyMDE.v2.5.1](https://github.com/Ionaru/easy-markdown-editor)：MarkDown编辑器，源自SimplyMDE
-- [jQuery-Validation.v1.19.0](https://github.com/jquery-validation/jquery-validation)：jQuery验证插件
-- [jQuery-treetable.v3.2.0](https://github.com/ludo/jquery-treetable)：jQuery动态树状表格插件
+- [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：管理后台整合包
+- [Bootstrap-FileInput.v5.0.0](https://github.com/kartik-v/bootstrap-fileinput)：图片上传插件
+- [Bootstrap-Select.v1.13.9](https://github.com/snapappointments/bootstrap-select)：下拉菜单插件
+- [Bootstrap-Table.v1.11.1](https://github.com/wenzhixin/bootstrap-table)：动态表格插件
+- [EasyMDE.v2.5.1](https://github.com/Ionaru/easy-markdown-editor)：MarkDown编辑器
+- [jQuery-Validation.v1.19.0](https://github.com/jquery-validation/jquery-validation)：内容校验插件
+- [jQuery-treetable.v3.2.0](https://github.com/ludo/jquery-treetable)：动态树状表格插件
 - [JavaScript-Cookie.v2.2.0](https://github.com/js-cookie/js-cookie)：使用JS操作Cookie的插件
 - [Layer.v3.1.0](https://github.com/sentsin/layer)：国内最流行的弹出插件 
-- [X-Editable.v1.5.3](https://github.com/vitalets/x-editable)：在页面上创建可编辑元素，编辑模式包括弹出和行内模式。
-
+- [X-Editable.v1.5.3](https://github.com/vitalets/x-editable)：支持弹出和行内编辑的插件
+- [Inline-Attachment.v2.0.3](https://github.com/Rovak/InlineAttachment)：粘贴图片/文件到编辑器内的插件
 
 *后端：*
 

@@ -44,7 +44,6 @@ func init() {
 	beego.Router("/resource/delete", &controllers.ResourceController{}, "Post:Delete")
 	//快速修改顺序
 	beego.Router("/resource/updateseq", &controllers.ResourceController{}, "Post:UpdateSeq")
-
 	//通用选择面板
 	beego.Router("/resource/select", &controllers.ResourceController{}, "Get:Select")
 	//用户有权管理的菜单列表（包括区域）
@@ -56,6 +55,7 @@ func init() {
 	beego.Router("/backenduser/datagrid", &controllers.BackendUserController{}, "POST:DataGrid")
 	beego.Router("/backenduser/edit/?:id", &controllers.BackendUserController{}, "Get,Post:Edit")
 	beego.Router("/backenduser/delete", &controllers.BackendUserController{}, "Post:Delete")
+
 	//后台用户中心
 	beego.Router("/usercenter/profile", &controllers.UserCenterController{}, "Get:Profile")
 	beego.Router("/usercenter/basicinfosave", &controllers.UserCenterController{}, "Post:BasicInfoSave")
@@ -69,6 +69,10 @@ func init() {
 	beego.Router("/article/edit/?:id", &controllers.ArticleController{}, "Get,Post:Edit")
 	beego.Router("/article/delete", &controllers.ArticleController{}, "Post:Delete")
 	beego.Router("/article/updateUrl", &controllers.ArticleController{}, "Post:UpdateUrl")
+
+	//附件路由
+	beego.Router("/attach/index", &controllers.AttachController{}, "*:Index")
+	beego.Router("/attach/datagrid", &controllers.AttachController{}, "Get,Post:DataGrid")
 
 	//系统设定
 	beego.Router("/backendsettings/index", &controllers.BackendSettingsController{}, "*:Index")
