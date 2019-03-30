@@ -56,6 +56,7 @@ ilus 的诞生离不开下面这些项目：
 - [EasyMDE.v2.5.1](https://github.com/Ionaru/easy-markdown-editor)：MarkDown编辑器，源自SimplyMDE
 - [jQuery-Validation.v1.19.0](https://github.com/jquery-validation/jquery-validation)：jQuery验证插件
 - [jQuery-treetable.v3.2.0](https://github.com/ludo/jquery-treetable)：jQuery动态树状表格插件
+- [JavaScript-Cookie.v2.2.0](https://github.com/js-cookie/js-cookie)：使用JS操作Cookie的插件
 - [Layer.v3.1.0](https://github.com/sentsin/layer)：国内最流行的弹出插件 
 - [X-Editable.v1.5.3](https://github.com/vitalets/x-editable)：在页面上创建可编辑元素，编辑模式包括弹出和行内模式。
 
