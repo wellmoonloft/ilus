@@ -15,7 +15,9 @@
 
 Fast, concise, and powerful blogging system developed in Golang
 
-The function of this project is located on Blog, CMS and WeChat miniprogram backend. 
+The function of this project is located on Blog, CMS and WeChat miniprogram backend
+
+Do not support < IE9
 
 ## Quick start
 
@@ -49,22 +51,23 @@ The birth of Halo is inseparable from the following projects：
 
 *frontend：*
 
-- [AdminLTE](https://github.com/ColorlibHQ/AdminLTE)：AdminLTE - Free Premium Admin control Panel Theme Based On Bootstrap 3.x
-- [Bootstrap](https://github.com/twbs/bootstrap)：The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web
-- [Bootstrap-FileInput](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
-- [Bootstrap-Select](https://github.com/snapappointments/bootstrap-select)：The jQuery plugin that brings select elements into the 21st century with intuitive multiselection, searching, and much more
-- [Bootstrap-Table](https://github.com/wenzhixin/bootstrap-table)：An extended table to integration with some of the most widely used CSS frameworks
-- [EasyMDE](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor
-- [Layer](https://github.com/sentsin/layer)：The most used web pop-up layer solution in China 
-- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)：The iconic SVG, font, and CSS toolkit
-- [X-Editable](https://github.com/vitalets/x-editable)：In-place editing with Twitter Bootstrap, jQuery UI or pure jQuery
+- [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：AdminLTE - Free Premium Admin control Panel Theme Based On Bootstrap 3.x
+- [Bootstrap-FileInput.v5.0.0](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
+- [Bootstrap-Select.v1.13.9](https://github.com/snapappointments/bootstrap-select)：The jQuery plugin that brings select elements into the 21st century with intuitive multiselection, searching, and much more
+- [Bootstrap-Table.v1.11.1](https://github.com/wenzhixin/bootstrap-table)：An extended table to integration with some of the most widely used CSS frameworks
+- [EasyMDE.v2.5.1](https://github.com/Ionaru/easy-markdown-editor)：A simple, beautiful, and embeddable JavaScript Markdown editor
+- [jQuery-Validation.v1.19.0](https://github.com/jquery-validation/jquery-validation)：jQuery Validation plugin
+- [jQuery-treetable.v3.2.0](https://github.com/ludo/jquery-treetable)：jQuery Dynamic Tree Table Plug-in
+- [JavaScript-Cookie.v2.2.0](https://github.com/js-cookie/js-cookie)：Operation Cookie Plug-in
+- [Layer.v3.1.0](https://github.com/sentsin/layer)：The most used web pop-up layer solution in China 
+- [X-Editable.v1.5.3](https://github.com/vitalets/x-editable)：In-place editing with Twitter Bootstrap, jQuery UI or pure jQuery
 
 
 *backend：*
 
-- [Beego](https://github.com/astaxie/beego)：beego is an open-source, high-performance web framework for the Go programming language 
-- [Go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)：Go MySQL Driver is a MySQL driver for Go's (golang) database/sql package
-- [Redigo](https://github.com/gomodule/redigo)：Go client for Redis
+- [Beego.v1.11.1](https://github.com/astaxie/beego)：Web framework for the Golang
+- [Go-sql-driver/mysql.v1.4.1](https://github.com/go-sql-driver/mysql)：MySQL driver for Golang
+- [Redigo.v1.7.0](https://github.com/gomodule/redigo)：Go client for Redis
 
 ## Code formats levels
 [Code formats](https://goreportcard.com/report/github.com/wellmoonloft/ilus)
