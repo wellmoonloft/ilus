@@ -14,7 +14,6 @@ func (a *Article) TableName() string {
 type ArticleQueryParam struct {
 	BaseQueryParam
 	NameLike string //模糊查询
-
 }
 
 // Article 标签

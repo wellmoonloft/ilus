@@ -61,6 +61,8 @@ ilus 使用的开源项目：
 - [Layer.v3.1.0](https://github.com/sentsin/layer)：国内最流行的弹出插件 
 - [X-Editable.v1.5.3](https://github.com/vitalets/x-editable)：支持弹出和行内编辑的插件
 - [Inline-Attachment.v2.0.3](https://github.com/Rovak/InlineAttachment)：粘贴图片/文件到编辑器内的插件
+- [Pagination.v2.1.4](https://github.com/superRaytin/paginationjs)：JS控制的分页插件，支持json数据源
+
 
 *后端：*
 

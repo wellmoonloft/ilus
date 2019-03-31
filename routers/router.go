@@ -73,6 +73,7 @@ func init() {
 	//附件路由
 	beego.Router("/attach/index", &controllers.AttachController{}, "*:Index")
 	beego.Router("/attach/uploadfile", &controllers.AttachController{}, "Post:UploadFile")
+	beego.Router("/attach/refresh/?:action", &controllers.AttachController{}, "Get:ReFresh")
 
 	//系统设定
 	beego.Router("/backendsettings/index", &controllers.BackendSettingsController{}, "*:Index")

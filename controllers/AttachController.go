@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
@@ -9,6 +10,7 @@ import (
 	"github.com/ilus/models"
 	"github.com/ilus/utils"
 	"io/ioutil"
+	"math"
 	"strconv"
 	"strings"
 	"time"
@@ -39,16 +41,72 @@ func (c *AttachController) Index() {
 
 	//读取附件库然后把结果塞进Data供前端展现
 	var params models.AttachQueryParam
-	//json.Unmarshal(c.Ctx.Input.RequestBody, &params)
+	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
 	//获取数据列表和总数
-	//data, total := models.AttachPageList(&params)
-	data, res := models.AttachPageList(&params)
+	data, total := models.AttachPageList(&params, 0)
 	//定义返回的数据结构
 	result := make(map[string]interface{})
-	//result["total"] = total
+	result["total"] = total
+	//总页数
+	result["pages"] = math.Ceil(float64(total) / float64(12))
+	//数据
 	result["rows"] = data
+	//当前页数
+	result["currpage"] = 1
+	//首页是否可操作
+	result["isfirst"] = true
+	//上页是否可操作
+	result["islast"] = true
+	//下页是否可操作
+	result["isnext"] = false
+	//尾页是否可操作
+	result["isend"] = false
+
 	c.Data["json"] = result
-	c.Data["paginator"] = res
+
+	//c.ServeJSON()
+
+}
+
+//ReFresh 标签管理首页
+func (c *AttachController) ReFresh() {
+
+	action := c.GetString(":action")
+	//读取附件库然后把结果塞进Data供前端展现
+	var params models.AttachQueryParam
+	/*switch action {
+	case "first":
+		...
+	case "last":
+
+	case "next":
+		...
+	default:
+		...
+	}*/
+
+	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
+	//获取数据列表和总数
+	data, total := models.AttachPageList(&params, 0)
+	//定义返回的数据结构
+	result := make(map[string]interface{})
+	result["total"] = total
+	//总页数
+	result["pages"] = math.Ceil(float64(total) / float64(12))
+	//数据
+	result["rows"] = data
+	//当前页数
+	result["currpage"] = action
+	//首页是否可操作
+	result["isfirst"] = true
+	//上页是否可操作
+	result["islast"] = true
+	//下页是否可操作
+	result["isnext"] = false
+	//尾页是否可操作
+	result["isend"] = false
+
+	c.Data["json"] = result
 
 	//c.ServeJSON()
 
@@ -102,8 +160,8 @@ func (c *AttachController) UploadFile() {
 	m.Name = timestamp + h.Filename
 	m.Date = time.Now()
 	m.ImgSize = strconv.FormatInt(h.Size, 10)
-	m.Url = "upload/" + year + "/" + month + "/file/" + timestamp + h.Filename
-	m.Thumbnail = "upload/" + year + "/" + month + "/thumbnail/small-" + timestamp + h.Filename
+	m.Url = filePath
+	m.Thumbnail = thumbnail
 
 	if _, err := o.Insert(&m); err == nil {
 		c.jsonResult(utils.JRCodeSucc, "添加成功", m.Id)
