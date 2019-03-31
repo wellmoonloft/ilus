@@ -2,13 +2,16 @@ package controllers
 
 import (
 	"bytes"
-	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
 	"github.com/ilus/imaging"
 	"github.com/ilus/models"
 	"github.com/ilus/utils"
 	"io/ioutil"
+	"strconv"
+	"strings"
+	"time"
 )
 
 //AttachController 标签管理
@@ -36,14 +39,18 @@ func (c *AttachController) Index() {
 
 	//读取附件库然后把结果塞进Data供前端展现
 	var params models.AttachQueryParam
-	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
+	//json.Unmarshal(c.Ctx.Input.RequestBody, &params)
 	//获取数据列表和总数
-	data, total := models.AttachPageList(&params)
+	//data, total := models.AttachPageList(&params)
+	data, res := models.AttachPageList(&params)
 	//定义返回的数据结构
 	result := make(map[string]interface{})
-	result["total"] = total
+	//result["total"] = total
 	result["rows"] = data
 	c.Data["json"] = result
+	c.Data["paginator"] = res
+
+	//c.ServeJSON()
 
 }
 
@@ -55,11 +62,25 @@ func (c *AttachController) UploadFile() {
 		c.jsonResult(utils.JRCodeFailed, "上传失败", "")
 	}
 	defer f.Close()
-	filePath := "static/upload/" + h.Filename
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+	year := time.Now().Format("2006")
+	month := time.Now().Format("01")
+
+	//判断文件夹是否存在并自动创建文件夹
+	_, err1 := utils.PathExists("static/upload/" + year + "/")
+	_, err1 = utils.PathExists("static/upload/" + year + "/" + month + "/")
+	_, err1 = utils.PathExists("static/upload/" + year + "/" + month + "/file/")
+	_, err1 = utils.PathExists("static/upload/" + year + "/" + month + "/thumbnail/")
+
+	fmt.Println(err1)
+	//部署的时候记得加判断条件，如果建文件夹权限不足
+
+	//把文件名改为当前时间戳
+	filePath := "static/upload/" + year + "/" + month + "/file/" + timestamp + h.Filename
+
 	// 保存位置在 static/upload, 没有文件夹要先创建
 	c.SaveToFile("fileImageUrl", filePath)
-
-	//生成缩略图
+	//读取图片文件并转码
 	imgData, _ := ioutil.ReadFile(filePath)
 	buf := bytes.NewBuffer(imgData)
 	imagedecode, err := imaging.Decode(buf)
@@ -67,14 +88,58 @@ func (c *AttachController) UploadFile() {
 		fmt.Println(err)
 		return
 	}
-
-	//生成缩略图，尺寸150*200，并保持到为文件2.jpg
+	//生成缩略图，尺寸256*256，并保存
+	thumbnail := "static/upload/" + year + "/" + month + "/thumbnail/small-" + timestamp + h.Filename
 	image := imaging.Resize(imagedecode, 256, 256, imaging.Lanczos)
-	err = imaging.Save(image, "static/upload/"+"small-"+h.Filename)
+	err = imaging.Save(image, thumbnail)
 	if err != nil {
 		fmt.Println(err)
 	}
 
+	//保存到数据库
+	m := models.Attach{}
+	o := orm.NewOrm()
+	m.Name = timestamp + h.Filename
+	m.Date = time.Now()
+	m.ImgSize = strconv.FormatInt(h.Size, 10)
+	m.Url = "upload/" + year + "/" + month + "/file/" + timestamp + h.Filename
+	m.Thumbnail = "upload/" + year + "/" + month + "/thumbnail/small-" + timestamp + h.Filename
+
+	if _, err := o.Insert(&m); err == nil {
+		c.jsonResult(utils.JRCodeSucc, "添加成功", m.Id)
+	} else {
+		c.jsonResult(utils.JRCodeFailed, "添加失败", m.Id)
+	}
+
 	c.jsonResult(utils.JRCodeSucc, "上传成功", "/"+filePath)
 
+}
+
+//Save 添加、编辑页面 保存
+func (c *AttachController) Save() {
+
+	m := models.Attach{}
+	o := orm.NewOrm()
+	if _, err := o.Insert(&m); err == nil {
+		c.jsonResult(utils.JRCodeSucc, "添加成功", m.Id)
+	} else {
+		c.jsonResult(utils.JRCodeFailed, "添加失败", m.Id)
+	}
+
+}
+
+//Delete 批量删除
+func (c *AttachController) Delete() {
+	strs := c.GetString("ids")
+	ids := make([]int, 0, len(strs))
+	for _, str := range strings.Split(strs, ",") {
+		if id, err := strconv.Atoi(str); err == nil {
+			ids = append(ids, id)
+		}
+	}
+	if num, err := models.AttachDelete(ids); err == nil {
+		c.jsonResult(utils.JRCodeSucc, fmt.Sprintf("成功删除 %d 项", num), 0)
+	} else {
+		c.jsonResult(utils.JRCodeFailed, "删除失败", 0)
+	}
 }

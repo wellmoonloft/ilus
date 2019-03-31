@@ -19,7 +19,9 @@
         },
     }).on('filebatchuploadcomplete', function(event, preview, config, tags, extraData) {
         //$('#uploadImg').fileinput.clean()
+        $(".fileinput-remove-button").click();
         $("#uploadForm").hide(400)
+        window.location.reload();
         console.log('File Batch Uploaded', preview, config, tags, extraData)
     });
 
