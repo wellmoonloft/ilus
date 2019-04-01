@@ -16,4 +16,6 @@ func init() {
 	}
 	//初始化数据库
 	InitDatabase()
+
+	utils.Testmain()
 }
