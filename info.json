@@ -1,0 +1,110 @@
+{
+  "general": {
+    "tagsTitle": "常规设置",
+    "language": [
+      {
+        "id": 1,
+        "name": "简体中文",
+        "code": "zh-CN"
+      },
+      {
+        "id": 2,
+        "name": "繁体中文",
+        "code": "zh-TW"
+      },
+      {
+        "id": 3,
+        "name": "英文",
+        "code": "en"
+      }
+    ],
+    "title": "井月轩的博客",
+    "url": "https://github.com/wellmoonloft/ilus",
+    "logo": "http://image.igerm.cn/img/20190325095035.png",
+    "favicon": "http://image.igerm.cn/img/20190325095035.png"
+  },
+  "seo": {
+    "tagsTitle": "SEO设置",
+    "keyWord": {
+      "first": "博客",
+      "second": "信息技术",
+      "third": "blog",
+      "fourth": "go语言",
+      "fifth": "微信开发"
+    },
+    "abs": "井月轩的博客",
+    "baiDuToken": "baiDuToken",
+    "GoogleCaptcha": "GooGleCaptcha",
+    "bingCaptcha": "bingCaptcha",
+    "baiDuCaptcha": "baiDuCaptcha"
+  },
+  "article": {
+    "indexNum": 10,
+    "rssNum": 10,
+    "absNum": 50
+  },
+  "comment": {
+    "tagsTitle": "评论设置",
+    "aevter": [
+      {
+        "id": 1,
+        "name": "默认",
+        "list": "zh-CN"
+      },
+      {
+        "id": 2,
+        "name": "抽象几何图形",
+        "list": "zh-TW"
+      },
+      {
+        "id": 3,
+        "name": "不显示头像",
+        "list": "en"
+      }
+    ],
+    "isShowExamine": true,
+    "isNewInform": false,
+    "isExamineInform": false,
+    "isReplyInform": false,
+    "isAPI": true,
+    "indexNum": 10
+  },
+  "attach": {
+    "tagsTitle": "附件设置",
+    "position": 1,
+    "positionSettings": [
+      {
+        "id": 1,
+        "name": "本地"
+      },
+      {
+        "id": 2,
+        "name": "七牛云",
+        "url": "http://image.igerm.cn",
+        "accessKey": "accessKey",
+        "secretKey": "secretKey",
+        "bucket": "bucket",
+        "strategy": "strategy"
+      }
+    ]
+  },
+  "backend": {
+    "tagsTitle": "后台设置",
+    "isPjax": true,
+    "layout": 1,
+    "isSidebar": true
+  },
+  "email": {
+    "tagsTitle": "邮箱设置",
+    "isEmail": false,
+    "smtp": "smtp.exmail.qq.com",
+    "userName": "userName",
+    "passWord": "passWord",
+    "sendName": "sendName"
+  },
+  "other": {
+    "tagsTitle": "其他设置",
+    "isAPI": true,
+    "token": "token"
+  }
+}
