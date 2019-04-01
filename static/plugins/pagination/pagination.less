@@ -8,6 +8,13 @@
 @Blue_bgColor_hover: #E9F4FC;
 @Blue_bgColor_buttonHover: #3CA5EA;
 
+@Silvery_color_base: #dddddd;
+@Silvery_color_font: @Silvery_color_base;
+@Silvery_color_border: @Silvery_color_base;
+@Silvery_bgColor_active: @Silvery_color_base;
+@Silvery_bgColor_hover: #E9F4FC;
+@Silvery_bgColor_buttonHover: #e3e3e3;
+
 @Green_color_base: #449D44;
 @Green_color_font: @Green_color_base;
 @Green_color_border: @Green_color_base;
@@ -310,6 +317,46 @@
         color: #fff;
         &:hover{
           background-color: @Blue_bgColor_buttonHover;
+        }
+      }
+    }
+  }
+}
+
+.paginationjs{
+  &.paginationjs-theme-silvery{
+    .paginationjs-pages{
+      li{
+        border-color: @Silvery_color_border;
+        > a{
+          color: @Silvery_color_font;
+          &:hover{
+            background: @Silvery_bgColor_hover;
+          }
+        }
+        &.active{
+          > a{
+            background: @Silvery_bgColor_active;
+            color: #fff;
+          }
+        }
+        &.disabled > a:hover{
+          background: none;
+        }
+      }
+    }
+    .paginationjs-go-input{
+      > input[type="text"]{
+        border-color: @Silvery_color_border;
+      }
+    }
+    .paginationjs-go-button{
+      > input[type="button"]{
+        background: @Silvery_bgColor_active;
+        border-color: @Silvery_color_border;
+        color: #fff;
+        &:hover{
+          background-color: @Silvery_bgColor_buttonHover;
         }
       }
     }

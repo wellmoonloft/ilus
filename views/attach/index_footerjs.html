@@ -23,7 +23,7 @@
         $(".fileinput-remove-button").click();
         $("#uploadForm").hide(400)
         window.location.reload();
-        console.log('File Batch Uploaded', preview, config, tags, extraData)
+        //console.log('File Batch Uploaded', preview, config, tags, extraData)
     });
     //点击向下弹出上传面板
     $("#showForm").click(function () {
@@ -38,7 +38,7 @@
                 dataSource: {{ .json.rows}},
                 pageSize: 12,
                 hideWhenLessThanOnePage: true,
-                className: 'paginationjs-theme-blue paginationjs-small',
+                className: 'paginationjs-theme-silvery paginationjs-small',
                 callback: function (response, pagination) {
                     var dataHtml = '<div class="row" style="margin-top: 10px">';
                     $.each(response, function (index, item) {

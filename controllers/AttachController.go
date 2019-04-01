@@ -123,6 +123,9 @@ func (c *AttachController) UploadFile() {
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	year := time.Now().Format("2006")
 	month := time.Now().Format("01")
+	filetype := h.Header.Get("Content-Type")
+
+	fmt.Printf(filetype)
 
 	//判断文件夹是否存在并自动创建文件夹
 	_, err1 := utils.PathExists("static/upload/" + year + "/")
@@ -162,6 +165,7 @@ func (c *AttachController) UploadFile() {
 	m.ImgSize = strconv.FormatInt(h.Size, 10)
 	m.Url = filePath
 	m.Thumbnail = thumbnail
+	m.Type = filetype
 
 	if _, err := o.Insert(&m); err == nil {
 		c.jsonResult(utils.JRCodeSucc, "添加成功", m.Id)
