@@ -27,15 +27,17 @@
 
 3. 安装bee工具：`go get github.com/beego/bee`
 
-4. 安装mysql驱动：`go get -u github.com/go-sql-driver/mysql`
+4. 安装goyaml2：`go get -t github.com/beego/goyaml2`
 
-5. 安装redis模块：`go get github.com/gomodule/redigo/redis`
+5. 安装mysql驱动：`go get -u github.com/go-sql-driver/mysql`
 
-6. 下载源码，并在`app.conf`中配置数据库信息（默认不开启redis缓存、可自行配置）
+6. 安装redis模块：`go get github.com/gomodule/redigo/redis`
 
-7. 在mysql数据库中创建实例，实例名需与配置一致
+7. 下载源码，并在`app.conf`中配置数据库信息（默认不开启redis缓存、可自行配置）
 
-8. `run main.go`
+8. 在mysql数据库中创建实例，实例名需与配置一致
+
+9. `run main.go`
 
 > 系统会自动建表
 

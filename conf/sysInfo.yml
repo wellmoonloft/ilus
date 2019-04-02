@@ -1,0 +1,66 @@
+#系统语言
+language: '简体中文'
+languageCode: 'zh-CN'
+#系统名称
+sysTitle: '井月轩的博客'
+#系统地址
+sysUrl: 'https://github.com/wellmoonloft/ilus'
+#网站logo
+logo: 'http://image.igerm.cn/img/20190325095035.png'
+#网站favicon
+favicon: 'http://image.igerm.cn/img/20190325095035.png'
+#关键词
+keyWord:
+  - '博客'
+  - '信息技术'
+  - 'blog'
+  - 'go语言'
+  - '微信开发'
+#摘要
+abs: '井月轩的博客'
+baiduToken: 'baiduToken'
+googleCaptcha: 'GoogleCaptcha'
+baiduCaptcha: 'baiduCaptcha'
+bingCaptcha: 'bingCaptcha'
+#首页显示条目数
+indexNum: 10
+#rss显示条目数
+rssNum: 10
+#摘要字数
+absNum: 10
+#头像
+aevterId: 1
+aevterName: '默认'
+aevterUrl: 'aevter'
+#评论是否审核后再显示
+isExamine: true
+#新评论开启提醒
+isnewInform: false
+#审核通过开启提醒
+isExamineInform: false
+#新回复开启提醒
+isreplyInform: false
+#新评论开启提醒
+iscommentApi: false
+#评论条目数
+commentNum: 10
+#附件保存位置
+position: 1
+positionUrl: 'http://image.igerm.cn'
+accessKey: 'accessKey'
+secretKey: 'secretKey'
+bucket: 'bucket'
+strategy: 'strategy'
+#是否开启pjax
+isPJAX: true
+layout: 1
+isSidebar: true
+#是否开启邮件
+isEmail: false
+smtp: 'smtp.exmail.qq.com'
+emailName: 'emailName'
+emailPwd: 'emailPwd'
+sendName: 'sendName'
+#是否开启API
+isAPI: true
+token: 'token'
