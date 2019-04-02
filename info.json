@@ -1,7 +1,6 @@
 {
-  "general": {
-    "tagsTitle": "常规设置",
-    "language": [
+  "General": {
+    "Language": [
       {
         "id": 1,
         "name": "简体中文",
@@ -49,17 +48,17 @@
       {
         "id": 1,
         "name": "默认",
-        "list": "zh-CN"
+        "url": "zh-CN"
       },
       {
         "id": 2,
         "name": "抽象几何图形",
-        "list": "zh-TW"
+        "url": "zh-TW"
       },
       {
         "id": 3,
         "name": "不显示头像",
-        "list": "en"
+        "url": "en"
       }
     ],
     "isShowExamine": true,
