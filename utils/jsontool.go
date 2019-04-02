@@ -1,69 +1,70 @@
 package utils
 
-type PersonInfo struct {
-	Name    string
-	age     int32
-	Sex     bool
-	Hobbies []string
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+	"os"
+)
+
+type User struct {
+	Name string
+	Age  int8
+}
+
+func testMarshal() []byte {
+	user := User{
+		Name: "Tab",
+		Age:  18,
+	}
+	data, err := json.Marshal(user)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return data
+}
+
+func testUnmarshal(data []byte) {
+	var user Settings
+	err := json.Unmarshal(data, &user)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(user)
+}
+
+func testRead() []byte {
+	fp, err := os.OpenFile("./info.json", os.O_RDONLY, 0755)
+	defer fp.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+	data := make([]byte, 10000)
+	n, err := fp.Read(data)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(data[:n]))
+	return data[:n]
+}
+
+func testWrite(data []byte) {
+	fp, err := os.OpenFile("data.json", os.O_RDWR|os.O_CREATE, 0755)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer fp.Close()
+	_, err = fp.Write(data)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func Testmain() {
-	//writeFile()
-	//readFile()
+	var data []byte
+	data = testMarshal()
+	fmt.Println(string(data))
+	testWrite(data)
+	data = testRead()
+	testUnmarshal(data)
 }
-
-/*func readFile() {
-
-	filePtr, err := os.Open("info.json")
-	if err != nil {
-		fmt.Println("Open file failed [Err:%s]", err.Error())
-		return
-	}
-	defer filePtr.Close()
-
-	var person Settings
-
-	// 创建json解码器
-	decoder := json.NewDecoder(filePtr)
-	err = decoder.Decode(&person)
-	if err != nil {
-		fmt.Println("Decoder failed", err.Error())
-
-	} else {
-		fmt.Println("Decoder success")
-		fmt.Println(person)
-	}
-}*/
-/*func writeFile() {
-	personInfo := []PersonInfo{{"David", 30, true, []string{"跑步", "读书", "看电影"}}, {"Lee", 27, false, []string{"工作", "读书", "看电影"}}}
-
-	// 创建文件
-	filePtr, err := os.Create("person_info.json")
-	if err != nil {
-		fmt.Println("Create file failed", err.Error())
-		return
-	}
-	defer filePtr.Close()
-
-	// 创建Json编码器
-	encoder := json.NewEncoder(filePtr)
-
-	err = encoder.Encode(personInfo)
-	if err != nil {
-		fmt.Println("Encoder failed", err.Error())
-
-	} else {
-		fmt.Println("Encoder success")
-	}
-
-	// 带JSON缩进格式写文件
-	data, err := json.MarshalIndent(personInfo, "", "  ")
-	if err != nil {
-	 fmt.Println("Encoder failed", err.Error())
-
-	} else {
-	 fmt.Println("Encoder success")
-	}
-
-	filePtr.Write(data)
-}*/

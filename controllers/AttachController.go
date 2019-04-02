@@ -111,21 +111,15 @@ func (c *AttachController) UploadFile() {
 	month := time.Now().Format("01")
 	filetype := h.Header.Get("Content-Type")
 
-	fmt.Printf(filetype)
-
 	//判断文件夹是否存在并自动创建文件夹
-	_, err1 := utils.PathExists("static/upload/" + year + "/")
-	_, err1 = utils.PathExists("static/upload/" + year + "/" + month + "/")
-	_, err1 = utils.PathExists("static/upload/" + year + "/" + month + "/file/")
-	_, err1 = utils.PathExists("static/upload/" + year + "/" + month + "/thumbnail/")
-
-	fmt.Println(err1)
+	utils.PathExists("static/upload/" + year + "/")
+	utils.PathExists("static/upload/" + year + "/" + month + "/")
+	utils.PathExists("static/upload/" + year + "/" + month + "/file/")
+	utils.PathExists("static/upload/" + year + "/" + month + "/thumbnail/")
 	//部署的时候记得加判断条件，如果建文件夹权限不足
 
 	//把文件名改为当前时间戳
 	filePath := "static/upload/" + year + "/" + month + "/file/" + timestamp + h.Filename
-
-	// 保存位置在 static/upload, 没有文件夹要先创建
 	c.SaveToFile("fileImageUrl", filePath)
 	//读取图片文件并转码
 	imgData, _ := ioutil.ReadFile(filePath)

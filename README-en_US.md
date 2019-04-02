@@ -47,11 +47,11 @@ Do not support < IE9
 
 > ilus uses the GPL-v3.0 protocol to open source
 
-## Thanks
+## Dependents
 
-ilus used open source projects list:
 
-*frontend：*
+
+**frontend：**
 
 - [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：AdminLTE - Free Premium Admin control Panel Theme Based On Bootstrap 3.x
 - [Bootstrap-FileInput.v5.0.0](https://github.com/kartik-v/bootstrap-fileinput)：An enhanced HTML 5 file input for Bootstrap 3.x with file preview, multiple selection, and more features
@@ -65,7 +65,7 @@ ilus used open source projects list:
 - [X-Editable.v1.5.3](https://github.com/vitalets/x-editable)：In-place editing with Twitter Bootstrap, jQuery UI or pure jQuery
 
 
-*backend：*
+**backend：**
 
 - [Beego.v1.11.1](https://github.com/astaxie/beego)：Web framework for the Golang
 - [Go-sql-driver/mysql.v1.4.1](https://github.com/go-sql-driver/mysql)：MySQL driver for Golang

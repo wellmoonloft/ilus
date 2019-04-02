@@ -44,11 +44,11 @@
 [GNU.v3.0](https://github.com/wellmoonloft/ilus/blob/master/LICENSE)
 
 
-## 感谢
+## 依赖
 
-ilus 使用的开源项目：
+ilus 依赖的开源项目：
 
-*前端：*
+**前端：**
 
 - [AdminLTE.v2.4.10](https://github.com/ColorlibHQ/AdminLTE)：管理后台整合包
 - [Bootstrap-FileInput.v5.0.0](https://github.com/kartik-v/bootstrap-fileinput)：图片上传插件
@@ -64,7 +64,7 @@ ilus 使用的开源项目：
 - [Pagination.v2.1.4](https://github.com/superRaytin/paginationjs)：JS控制的分页插件，支持json数据源
 
 
-*后端：*
+**后端：**
 
 - [Beego.v1.11.1](https://github.com/astaxie/beego)：基于Go语言的web框架
 - [Go-sql-driver/mysql.v1.4.1](https://github.com/go-sql-driver/mysql)：基于Go语言的Mysql驱动

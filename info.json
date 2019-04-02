@@ -2,108 +2,97 @@
   "General": {
     "Language": [
       {
-        "id": 1,
-        "name": "简体中文",
-        "code": "zh-CN"
+        "Id": 1,
+        "Name": "简体中文",
+        "Code": "zh-CN"
       },
       {
-        "id": 2,
-        "name": "繁体中文",
-        "code": "zh-TW"
+        "Id": 2,
+        "Name": "繁体中文",
+        "Code": "zh-TW"
       },
       {
-        "id": 3,
-        "name": "英文",
-        "code": "en"
+        "Id": 3,
+        "Name": "英文",
+        "Code": "en"
       }
     ],
-    "title": "井月轩的博客",
-    "url": "https://github.com/wellmoonloft/ilus",
-    "logo": "http://image.igerm.cn/img/20190325095035.png",
-    "favicon": "http://image.igerm.cn/img/20190325095035.png"
+    "Title": "井月轩的博客",
+    "Url": "https://github.com/wellmoonloft/ilus",
+    "Logo": "http://image.igerm.cn/img/20190325095035.png",
+    "Favicon": "http://image.igerm.cn/img/20190325095035.png"
   },
-  "seo": {
-    "tagsTitle": "SEO设置",
-    "keyWord": {
-      "first": "博客",
-      "second": "信息技术",
-      "third": "blog",
-      "fourth": "go语言",
-      "fifth": "微信开发"
+  "Seo": {
+    "KeyWord": {
+      "First": "博客",
+      "Second": "信息技术",
+      "Third": "blog",
+      "Fourth": "go语言",
+      "Fifth": "微信开发"
     },
-    "abs": "井月轩的博客",
-    "baiDuToken": "baiDuToken",
+    "Abs": "井月轩的博客",
+    "BaiDuToken": "baiDuToken",
     "GoogleCaptcha": "GooGleCaptcha",
-    "bingCaptcha": "bingCaptcha",
-    "baiDuCaptcha": "baiDuCaptcha"
+    "BingCaptcha": "bingCaptcha",
+    "BaiDuCaptcha": "baiDuCaptcha"
   },
-  "article": {
-    "indexNum": 10,
-    "rssNum": 10,
-    "absNum": 50
+  "Article": {
+    "IndexNum": 10,
+    "RssNum": 10,
+    "AbsNum": 50
   },
-  "comment": {
-    "tagsTitle": "评论设置",
-    "aevter": [
+  "Comment": {
+    "Aevter": [
       {
-        "id": 1,
-        "name": "默认",
-        "url": "zh-CN"
+        "Id": 1,
+        "Name": "默认",
+        "Url": "zh-CN"
       },
       {
-        "id": 2,
-        "name": "抽象几何图形",
-        "url": "zh-TW"
+        "Id": 2,
+        "Name": "抽象几何图形",
+        "Url": "zh-TW"
       },
       {
-        "id": 3,
-        "name": "不显示头像",
-        "url": "en"
+        "Id": 3,
+        "Name": "不显示头像",
+        "Url": "en"
       }
     ],
-    "isShowExamine": true,
-    "isNewInform": false,
-    "isExamineInform": false,
-    "isReplyInform": false,
-    "isAPI": true,
-    "indexNum": 10
+    "IsShowExamine": true,
+    "IsNewInform": false,
+    "IsExamineInform": false,
+    "IsReplyInform": false,
+    "IsAPI": true,
+    "IndexNum": 10
   },
-  "attach": {
-    "tagsTitle": "附件设置",
-    "position": 1,
-    "positionSettings": [
+  "Attach": {
+    "Position": 1,
+    "PositionSettings":
       {
-        "id": 1,
-        "name": "本地"
-      },
-      {
-        "id": 2,
-        "name": "七牛云",
-        "url": "http://image.igerm.cn",
-        "accessKey": "accessKey",
-        "secretKey": "secretKey",
-        "bucket": "bucket",
-        "strategy": "strategy"
+        "Id": 2,
+        "Name": "七牛云",
+        "Url": "http://image.igerm.cn",
+        "AccessKey": "accessKey",
+        "SecretKey": "secretKey",
+        "Bucket": "bucket",
+        "Strategy": "strategy"
       }
-    ]
   },
-  "backend": {
-    "tagsTitle": "后台设置",
-    "isPjax": true,
-    "layout": 1,
-    "isSidebar": true
+  "Backend": {
+    "IsPjax": true,
+    "Layout": 1,
+    "IsSidebar": true
   },
-  "email": {
-    "tagsTitle": "邮箱设置",
-    "isEmail": false,
-    "smtp": "smtp.exmail.qq.com",
-    "userName": "userName",
-    "passWord": "passWord",
-    "sendName": "sendName"
+  "Email": {
+    "IsEmail": false,
+    "Smtp": "smtp.exmail.qq.com",
+    "UserName": "userName",
+    "PassWord": "passWord",
+    "SendName": "sendName"
   },
-  "other": {
-    "tagsTitle": "其他设置",
-    "isAPI": true,
-    "token": "token"
+  "Other": {
+    "IsAPI": true,
+    "Token": "token"
   }
 }
