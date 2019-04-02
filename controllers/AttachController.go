@@ -16,7 +16,7 @@ import (
 	"time"
 )
 
-//AttachController 标签管理
+//AttachController 附件管理
 type AttachController struct {
 	BaseController
 }
@@ -27,7 +27,7 @@ func (c *AttachController) Prepare() {
 	c.checkLogin()
 }
 
-//Index 标签管理首页
+//Index 附件管理首页
 func (c *AttachController) Index() {
 	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 附件管理"
 	//是否显示更多查询条件的按钮
@@ -38,37 +38,23 @@ func (c *AttachController) Index() {
 	c.LayoutSections = make(map[string]string)
 	c.LayoutSections["headcssjs"] = "attach/index_headcssjs.html"
 	c.LayoutSections["footerjs"] = "attach/index_footerjs.html"
-
 	//读取附件库然后把结果塞进Data供前端展现
 	var params models.AttachQueryParam
 	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
 	//获取数据列表和总数
-	data, total := models.AttachPageList(&params, 0)
+	data, total := models.AttachPageList(&params)
 	//定义返回的数据结构
 	result := make(map[string]interface{})
 	result["total"] = total
-	//总页数
-	result["pages"] = math.Ceil(float64(total) / float64(12))
 	//数据
 	result["rows"] = data
-	//当前页数
-	result["currpage"] = 1
-	//首页是否可操作
-	result["isfirst"] = true
-	//上页是否可操作
-	result["islast"] = true
-	//下页是否可操作
-	result["isnext"] = false
-	//尾页是否可操作
-	result["isend"] = false
-
 	c.Data["json"] = result
 
 	//c.ServeJSON()
 
 }
 
-//ReFresh 标签管理首页
+//ReFresh 附件管理首页
 func (c *AttachController) ReFresh() {
 
 	action := c.GetString(":action")
@@ -87,7 +73,7 @@ func (c *AttachController) ReFresh() {
 
 	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
 	//获取数据列表和总数
-	data, total := models.AttachPageList(&params, 0)
+	data, total := models.AttachPageList(&params)
 	//定义返回的数据结构
 	result := make(map[string]interface{})
 	result["total"] = total

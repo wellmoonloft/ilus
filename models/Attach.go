@@ -29,7 +29,7 @@ type Attach struct {
 }
 
 // AttachPageList 获取分页数据
-func AttachPageList(params *AttachQueryParam, start int) ([]*Attach, int64) {
+func AttachPageList(params *AttachQueryParam) ([]*Attach, int64) {
 	query := orm.NewOrm().QueryTable(AttachTBName())
 	data := make([]*Attach, 0)
 	//默认排序
