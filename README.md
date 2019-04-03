@@ -13,7 +13,7 @@
 
 **ilus** 【爱沙尼亚语】，意思是漂亮
 
-使用**Go语言**开发的博客系统，博客部分的功能和外观模仿[Halo](https://github.com/halo-dev/halo)开发
+使用**Go语言**开发的博客系统，源于[sdrms](https://github.com/lhtzbj12/sdrms)，博客部分的功能和外观模仿[Halo](https://github.com/halo-dev/halo)开发
 
 本项目的功能定位为博客、CMS及微信小程序后台【已去掉<IE9的支持】
 
@@ -27,7 +27,7 @@
 
 3. 安装bee工具：`go get github.com/beego/bee`
 
-4. 安装goyaml2：`go get -t github.com/beego/goyaml2`
+4. 安装yaml.v2库：`go get gopkg.in/yaml.v2`
 
 5. 安装mysql驱动：`go get -u github.com/go-sql-driver/mysql`
 
@@ -72,7 +72,7 @@ ilus 依赖的开源项目：
 - [Go-sql-driver/mysql.v1.4.1](https://github.com/go-sql-driver/mysql)：基于Go语言的Mysql驱动
 - [Redigo.v1.7.0](https://github.com/gomodule/redigo)：基于Go语言的Redis模块
 - [Imaging.v1.6.0](https://github.com/disintegration/imaging)：基于Go语言的图片处理工具
-
+- [Yaml.v2.2.2](https://github.com/go-yaml/yaml)：基于Go语言Yaml工具库
 
 
 ## 代码质量查看

@@ -1,16 +1,16 @@
 #系统语言
 language: '简体中文'
-languageCode: 'zh-CN'
+languagecode: 'zh-CN'
 #系统名称
-sysTitle: '井月轩的博客'
+systitle: '井月轩的博客'
 #系统地址
-sysUrl: 'https://github.com/wellmoonloft/ilus'
+sysurl: 'https://github.com/wellmoonloft/ilus'
 #网站logo
 logo: 'http://image.igerm.cn/img/20190325095035.png'
 #网站favicon
 favicon: 'http://image.igerm.cn/img/20190325095035.png'
 #关键词
-keyWord:
+keyword:
   - '博客'
   - '信息技术'
   - 'blog'
@@ -18,49 +18,49 @@ keyWord:
   - '微信开发'
 #摘要
 abs: '井月轩的博客'
-baiduToken: 'baiduToken'
-googleCaptcha: 'GoogleCaptcha'
-baiduCaptcha: 'baiduCaptcha'
-bingCaptcha: 'bingCaptcha'
+baidutoken: 'baiduToken'
+googlecaptcha: 'GoogleCaptcha'
+baiducaptcha: 'baiduCaptcha'
+bingcaptcha: 'bingCaptcha'
 #首页显示条目数
-indexNum: 10
+indexnum: 10
 #rss显示条目数
-rssNum: 10
+rssnum: 10
 #摘要字数
-absNum: 10
+absnum: 10
 #头像
-aevterId: 1
-aevterName: '默认'
-aevterUrl: 'aevter'
+aevterid: 1
+aevtername: '默认'
+aevterurl: 'aevter'
 #评论是否审核后再显示
-isExamine: true
+isexamine: true
 #新评论开启提醒
-isnewInform: false
+isnewinform: false
 #审核通过开启提醒
-isExamineInform: false
+isexamineinform: false
 #新回复开启提醒
-isreplyInform: false
+isreplyinform: false
 #新评论开启提醒
-iscommentApi: false
+iscommentapi: false
 #评论条目数
-commentNum: 10
+commentnum: 10
 #附件保存位置
 position: 1
-positionUrl: 'http://image.igerm.cn'
-accessKey: 'accessKey'
-secretKey: 'secretKey'
+positionurl: 'http://image.igerm.cn'
+accesskey: 'accessKey'
+secretkey: 'secretKey'
 bucket: 'bucket'
 strategy: 'strategy'
 #是否开启pjax
-isPJAX: true
+ispjax: true
 layout: 1
-isSidebar: true
+issidebar: true
 #是否开启邮件
-isEmail: false
+isemail: false
 smtp: 'smtp.exmail.qq.com'
-emailName: 'emailName'
-emailPwd: 'emailPwd'
-sendName: 'sendName'
+emailname: 'emailName'
+emailpwd: 'emailPwd'
+sendname: 'sendName'
 #是否开启API
-isAPI: true
+isaip: true
 token: 'token'

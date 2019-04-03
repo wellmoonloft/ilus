@@ -15,7 +15,9 @@
 
 Blogging system developed in Golang
 
-Function&UI is from [Halo](https://github.com/halo-dev/halo)
+Fork from [sdrms](https://github.com/lhtzbj12/sdrms)
+
+Function&UI is draw from [Halo](https://github.com/halo-dev/halo)
 
 The function of this project is located on Blog, CMS and WeChat miniprogram backend
 
@@ -29,15 +31,17 @@ Do not support < IE9
 
 3. Install bee tool：`go get github.com/beego/bee`
 
-4. Install mysql driver for Golang：`go get -u github.com/go-sql-driver/mysql`
+4. Install yaml.v2：`go get gopkg.in/yaml.v2`
 
-5. Install redis module for Golang：`go get github.com/gomodule/redigo/redis`
+5. Install mysql driver for Golang：`go get -u github.com/go-sql-driver/mysql`
 
-6. Clone code, and change [mysql] in `app.conf`（ for default `is_cache=false`, you can make it `true` if you need ）
+6. Install redis module for Golang：`go get github.com/gomodule/redigo/redis`
 
-7. Build a new schema in mysql，schema name must bee same with what you code in `app.conf`
+7. Clone code, and change [mysql] in `app.conf`（ for default `is_cache=false`, you can make it `true` if you need ）
 
-8. `run main.go`
+8. Build a new schema in mysql，schema name must bee same with what you code in `app.conf`
+
+9. `run main.go`
 
 >DB table will be auto build
 
@@ -70,6 +74,7 @@ Do not support < IE9
 - [Beego.v1.11.1](https://github.com/astaxie/beego)：Web framework for the Golang
 - [Go-sql-driver/mysql.v1.4.1](https://github.com/go-sql-driver/mysql)：MySQL driver for Golang
 - [Redigo.v1.7.0](https://github.com/gomodule/redigo)：Go client for Redis
+- [Yaml.v2.2.2](https://github.com/go-yaml/yaml)：YAML support for the Go language
 
 ## Code formats levels
 [Code formats](https://goreportcard.com/report/github.com/wellmoonloft/ilus)
