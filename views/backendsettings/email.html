@@ -4,9 +4,9 @@
             <label class="col-lg-2 col-sm-4 control-label">是否启用：</label>
             <div class="col-lg-4 col-sm-8 control-radio">
                 <div class="pretty p-default p-round" style="padding-top:7px">
-                    <input type="radio" name="smtp_email_enable" value="true" checked="">
+                    <input type="radio" name="smtp_email_enable" value="true" {{if .m.Isemail}}checked=""{{end}}>
                     <label>启用</label>
-                    <input type="radio" name="smtp_email_enable" value="false">
+                    <input type="radio" name="smtp_email_enable" value="false" {{if not .m.Isemail}}checked=""{{end}}>
                     <label>禁用</label>
                 </div>
             </div>
@@ -22,7 +22,7 @@
             <label for="emailSmtpUserName" class="col-lg-2 col-sm-4 control-label">邮箱账号：</label>
             <div class="col-lg-4 col-sm-8">
                 <input type="email" class="form-control" id="emailSmtpUserName"
-                       name="mail_smtp_username" value="{{.m.EmailUser}}"
+                       name="mail_smtp_username" value="{{.m.Emailname}}"
                        autocomplete="email">
             </div>
         </div>
@@ -30,7 +30,7 @@
             <label for="emailSmtpPassword" class="col-lg-2 col-sm-4 control-label">邮箱密码：</label>
             <div class="col-lg-4 col-sm-8">
                 <input type="password" class="form-control" id="emailSmtpPassword"
-                       name="mail_smtp_password" value="{{.m.EmailPwd}}"
+                       name="mail_smtp_password" value="{{.m.Emailpwd}}"
                        autocomplete="current-password">
             </div>
         </div>
@@ -38,7 +38,7 @@
             <label for="emailFromName" class="col-lg-2 col-sm-4 control-label">发件姓名：</label>
             <div class="col-lg-4 col-sm-8">
                 <input type="text" class="form-control" id="emailFromName" name="mail_from_name"
-                       value="{{.m.SendName}}" autocomplete="name">
+                       value="{{.m.Sendname}}" autocomplete="name">
             </div>
         </div>
     </div>

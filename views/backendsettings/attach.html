@@ -4,11 +4,9 @@
             <label class="col-lg-2 col-sm-4 control-label">存储位置：</label>
             <div class="col-lg-4 col-sm-8 control-radio">
                 <div class="pretty p-default p-round" style="padding-top:7px">
-                    <input type="radio" name="attach_loc" value="server">
+                    <input type="radio" name="attach_loc" value="server" {{if eq .m.Position 1}}checked=""{{end}}>
                     <label>本地服务器</label>
-                    <input type="radio" name="attach_loc" value="upyun">
-                    <label>又拍云</label>
-                    <input type="radio" name="attach_loc" value="qiniu" checked="">
+                    <input type="radio" name="attach_loc" value="qiniu" {{if eq .m.Position 2}}checked=""{{end}}>
                     <label>七牛云</label>
                 </div>
             </div>
@@ -17,54 +15,6 @@
         <div class="server-options" style="display: none">
 
         </div>
-        <!-- 又拍云选项 -->
-        <div class="upyun-options" style="display: none">
-            <div class="form-group">
-                <label for="upyunOssDomain"
-                       class="col-lg-2 col-sm-4 control-label">域名绑定：</label>
-                <div class="col-lg-4 col-sm-8">
-                    <input type="text" class="form-control" id="upyunOssDomain"
-                           name="upyun_oss_domain" value="{{.m.AttachPath}}">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="upyunOssBucket"
-                       class="col-lg-2 col-sm-4 control-label">空间名称：</label>
-                <div class="col-lg-4 col-sm-8">
-                    <input type="text" class="form-control" id="upyunOssBucket"
-                           name="upyun_oss_bucket" value="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="upyunOssOperator"
-                       class="col-lg-2 col-sm-4 control-label">操作员名称：</label>
-                <div class="col-lg-4 col-sm-8">
-                    <input type="text" class="form-control" id="upyunOssOperator"
-                           name="upyun_oss_operator" value="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="upyunOssPwd" class="col-lg-2 col-sm-4 control-label">操作员密码：</label>
-                <div class="col-lg-4 col-sm-8">
-                    <input type="text" class="form-control" id="upyunOssPwd"
-                           name="upyun_oss_pwd" value="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="upyunOssSrc" class="col-lg-2 col-sm-4 control-label">文件目录：</label>
-                <div class="col-lg-4 col-sm-8">
-                    <input type="text" class="form-control" id="upyunOssSrc"
-                           name="upyun_oss_src" value="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="upyunOssSmall" class="col-lg-2 col-sm-4 control-label">处理策略:</label>
-                <div class="col-lg-4 col-sm-8">
-                    <input type="text" class="form-control" id="upyunOssSmall"
-                           name="upyun_oss_small" value="">
-                </div>
-            </div>
-        </div>
 
         <!-- 七牛云 -->
         <div class="qiniu-options" style="">
@@ -72,7 +22,7 @@
                 <label for="qiniuDomain" class="col-lg-2 col-sm-4 control-label">域名：</label>
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="qiniuDomain" name="qiniu_domain"
-                           value="{{.m.AttachDomain}}">
+                           value="{{.m.Positionurl}}">
                 </div>
             </div>
             <div class="form-group">
@@ -81,7 +31,7 @@
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="qiniuAccessKey"
                            name="qiniu_access_key"
-                           value="{{.m.AccessKey}}">
+                           value="{{.m.Accesskey}}">
                 </div>
             </div>
             <div class="form-group">
@@ -90,7 +40,7 @@
                 <div class="col-lg-4 col-sm-8">
                     <input type="text" class="form-control" id="qiniuSecretKey"
                            name="qiniu_secret_key"
-                           value="{{.m.SecretKey}}">
+                           value="{{.m.Secretkey}}">
                 </div>
             </div>
             <div class="form-group">

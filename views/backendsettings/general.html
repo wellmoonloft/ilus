@@ -4,8 +4,8 @@
             <label for="blogLocale" class="col-lg-2 col-sm-4 control-label">系统语言：</label>
             <div class="col-lg-4 col-sm-8">
                 <select class="form-control" id="blogLocale" name="blog_locale">
-                    <option value="zh_CN" selected=""></option>
-                    <option value="en_US">English</option>
+                    <option value="zh_CN" selected="">{{.m.Language}}</option>
+
                 </select>
             </div>
         </div>
@@ -13,14 +13,14 @@
             <label for="blogTitle" class="col-lg-2 col-sm-4 control-label">博客标题：</label>
             <div class="col-lg-4 col-sm-8">
                 <input type="text" class="form-control" id="blogTitle" name="blog_title"
-                       value="{{.m.Name}}">
+                       value="{{.m.Systitle}}">
             </div>
         </div>
         <div class="form-group">
             <label for="blogUrl" class="col-lg-2 col-sm-4 control-label">博客地址：</label>
             <div class="col-lg-4 col-sm-8">
                 <input type="url" class="form-control" id="blogUrl" name="blog_url"
-                       value="{{.m.Url}}">
+                       value="{{.m.Sysurl}}">
             </div>
         </div>
         <div class="form-group">
@@ -51,18 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="blogFooterInfo" class="col-lg-2 col-sm-4 control-label">页脚信息：
-                <span data-toggle="tooltip" data-placement="top" title=""
-                      style="cursor: pointer" data-original-title="支持HTML">
-                                                <i class="fa fa-question-circle" aria-hidden="true"></i>
-                                            </span>
-            </label>
-            <div class="col-lg-4 col-sm-8">
-                                        <textarea class="form-control" rows="5" id="blogFooterInfo"
-                                                  name="blog_footer_info" style="resize: none">{{.m.Footer}}</textarea>
-            </div>
-        </div>
+
     </div>
     <div class="box-footer">
         <button type="submit" class="btn btn-primary">保 存</button>

@@ -9,14 +9,14 @@
             </label>
             <div class="col-lg-4 col-sm-8">
                 <input type="number" class="form-control" id="indexPosts" name="index_posts"
-                       value="10">
+                       value="{{.m.Indexnum}}">
             </div>
         </div>
         <div class="form-group">
             <label for="rssPosts" class="col-lg-2 col-sm-4 control-label">RSS 显示条数：</label>
             <div class="col-lg-4 col-sm-8">
                 <input type="number" class="form-control" id="rssPosts" name="rss_posts"
-                       value="">
+                       value="{{.m.Rssnum}}">
             </div>
         </div>
         <div class="form-group">
@@ -24,7 +24,7 @@
             <div class="col-lg-4 col-sm-8">
                 <div class="input-group">
                     <input type="number" class="form-control" id="postSummary"
-                           name="post_summary" value="50">
+                           name="post_summary" value="{{.m.Absnum}}">
                     <span class="input-group-btn">
                                                     <button class="btn btn-default btn-flat" id="btn_update_summary"
                                                             onclick="updateAllSummary()" type="button">更新</button>

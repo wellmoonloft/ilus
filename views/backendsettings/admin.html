@@ -4,9 +4,9 @@
             <label class="col-lg-2 col-sm-4 control-label">启用 pjax：</label>
             <div class="col-lg-4 col-sm-8 control-radio">
                 <div class="pretty p-default p-round" style="padding-top:7px">
-                    <input type="radio" name="admin_pjax" value="true" checked="">
+                    <input type="radio" name="admin_pjax" value="true" {{if .m.Ispjax}}checked=""{{end}}>
                     <label>启用</label>
-                    <input type="radio" name="admin_pjax" value="false">
+                    <input type="radio" name="admin_pjax" value="false" {{if not .m.Ispjax}}checked=""{{end}}>
                     <label>禁用</label>
                 </div>
             </div>
@@ -59,9 +59,9 @@
             <label class="col-lg-2 col-sm-4 control-label">侧边栏样式：</label>
             <div class="col-lg-4 col-sm-8 control-radio">
                 <div class="pretty p-default p-round" style="padding-top:7px">
-                    <input type="radio" name="sidebar_style" value="" checked="">
+                    <input type="radio" name="sidebar_style" value="" {{if .m.Issidebar}}checked=""{{end}}>
                     <label>展开</label>
-                    <input type="radio" name="sidebar_style" value="sidebar-collapse">
+                    <input type="radio" name="sidebar_style" value="" {{if not .m.Issidebar}}checked=""{{end}}>
                     <label>收拢</label>
                 </div>
             </div>

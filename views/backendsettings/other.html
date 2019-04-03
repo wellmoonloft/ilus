@@ -4,9 +4,9 @@
             <label class="col-lg-2 col-sm-4 control-label">API 服务：</label>
             <div class="col-lg-4 col-sm-8 control-radio">
                 <div class="pretty p-default p-round" style="padding-top:7px">
-                    <input type="radio" name="api_status" value="true" checked="">
+                    <input type="radio" name="api_status" value="true" {{if .m.Isaip}}checked=""{{end}}>
                     <label>启用</label>
-                    <input type="radio" name="api_status" value="false">
+                    <input type="radio" name="api_status" value="false" {{if .m.Isaip}}checked=""{{end}}>
                     <label>禁用</label>
                 </div>
 
@@ -17,7 +17,7 @@
             <div class="col-lg-4 col-sm-8">
                 <div class="input-group">
                     <input type="text" class="form-control" id="apiToken" name="api_token"
-                           value="{{.m.ApiToken}}">
+                           value="{{.m.Token}}">
                     <span class="input-group-btn">
                         <button class="btn btn-default btn-flat" id="btnUpdateToken"
                                 onclick="updateToken()" type="button">刷新</button>
@@ -25,18 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="statisticsCode" class="col-lg-2 col-sm-4 control-label">统计代码：
-                <span data-toggle="tooltip" data-placement="top" title=""
-                      style="cursor: pointer" data-original-title="可以使用cnzz，百度，google等">
-                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                </span>
-            </label>
-            <div class="col-lg-4 col-sm-8">
-                <textarea class="form-control" rows="6" id="statisticsCode"
-                          name="statistics_code" style="resize: none">{{.m.StatsCode}}</textarea>
-            </div>
-        </div>
+
     </div>
     <div class="box-footer">
         <button type="button" class="btn btn-primary btn-sm "

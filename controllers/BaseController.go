@@ -11,6 +11,7 @@ import (
 //BaseController 基础结构体
 type BaseController struct {
 	beego.Controller
+	SystemController
 	controllerName string             //当前控制名称
 	actionName     string             //当前action名称
 	curUser        models.BackendUser //当前用户信息
@@ -22,8 +23,12 @@ func (c *BaseController) Prepare() {
 	c.controllerName, c.actionName = c.GetControllerAndAction()
 	//从Session里获取数据 设置用户信息
 	c.adapterUserInfo()
-	//app.conf里面读取系统信息
+	//从app.conf里面读取系统信息
 	c.setAppInfo()
+	//从sysInfo.yml里面读取系统设置信息
+	c.getSystemInfo()
+
+	c.saveSystemInfo()
 
 }
 

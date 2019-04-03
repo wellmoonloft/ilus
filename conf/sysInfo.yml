@@ -1,66 +1,46 @@
-#系统语言
-language: '简体中文'
-languagecode: 'zh-CN'
-#系统名称
-systitle: '井月轩的博客'
-#系统地址
-sysurl: 'https://github.com/wellmoonloft/ilus'
-#网站logo
-logo: 'http://image.igerm.cn/img/20190325095035.png'
-#网站favicon
-favicon: 'http://image.igerm.cn/img/20190325095035.png'
-#关键词
+language: 简体中文
+languagecode: zh-CN
+systitle: 井月轩的博客
+sysurl: https://github.com/wellmoonloft/ilus
+logo: http://image.igerm.cn/img/20190325095035.png
+favicon: http://image.igerm.cn/img/20190325095035.png
 keyword:
-  - '博客'
-  - '信息技术'
-  - 'blog'
-  - 'go语言'
-  - '微信开发'
-#摘要
-abs: '井月轩的博客'
-baidutoken: 'baiduToken'
-googlecaptcha: 'GoogleCaptcha'
-baiducaptcha: 'baiduCaptcha'
-bingcaptcha: 'bingCaptcha'
-#首页显示条目数
+- 博客
+- 信息技术
+- blog
+- go语言
+- 微信开发
+abs: hehehehhe
+baidutoken: baiduToken
+googlecaptcha: GoogleCaptcha
+baiducaptcha: baiduCaptcha
+bingcaptcha: bingCaptcha
 indexnum: 10
-#rss显示条目数
 rssnum: 10
-#摘要字数
-absnum: 10
-#头像
+absnum: 50
 aevterid: 1
-aevtername: '默认'
-aevterurl: 'aevter'
-#评论是否审核后再显示
-isexamine: true
-#新评论开启提醒
+aevtername: 默认
+aevterurl: aevter
+isexamine: false
 isnewinform: false
-#审核通过开启提醒
 isexamineinform: false
-#新回复开启提醒
 isreplyinform: false
-#新评论开启提醒
 iscommentapi: false
-#评论条目数
 commentnum: 10
-#附件保存位置
+commentplaceholder: 沙发沙发！
 position: 1
-positionurl: 'http://image.igerm.cn'
-accesskey: 'accessKey'
-secretkey: 'secretKey'
-bucket: 'bucket'
-strategy: 'strategy'
-#是否开启pjax
+positionurl: http://image.igerm.cn
+accesskey: accessKey
+secretkey: secretKey
+bucket: bucket
+strategy: strategy
 ispjax: true
-layout: 1
+isayout: 0
 issidebar: true
-#是否开启邮件
 isemail: false
-smtp: 'smtp.exmail.qq.com'
-emailname: 'emailName'
-emailpwd: 'emailPwd'
-sendname: 'sendName'
-#是否开启API
+smtp: smtp.exmail.qq.com
+emailname: emailName
+emailpwd: emailPwd
+sendname: sendName
 isaip: true
-token: 'token'
+token: token

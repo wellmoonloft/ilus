@@ -23,11 +23,7 @@ func (c *BackendSettingsController) Prepare() {
 //Index 系统设置首页
 func (c *BackendSettingsController) Index() {
 	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 系统设定"
-	m, err := models.BackendSettingsOne(1)
-	if m == nil || err != nil {
-		c.pageError("数据无效，请刷新后重试")
-	}
-	c.Data["m"] = m
+	c.Data["m"] = c.SystemController
 	c.setTpl()
 	c.LayoutSections = make(map[string]string)
 	c.LayoutSections["headcssjs"] = "backendsettings/index_headcssjs.html"
