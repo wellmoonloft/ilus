@@ -47,9 +47,9 @@ Do not support < IE9
 
 ## License
 
-[GNU.v3.0](https://github.com/wellmoonloft/ilus/blob/master/LICENSE)
+[ANTI-996-LICENSE.v1.0](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
-> ilus uses the GPL-v3.0 protocol to open source
+
 
 ## Dependents
 

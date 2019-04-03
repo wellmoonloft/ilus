@@ -43,7 +43,7 @@
 
 ## 许可证
 
-[GNU.v3.0](https://github.com/wellmoonloft/ilus/blob/master/LICENSE)
+[反 996 许可证.v1.0](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 
 ## 依赖
