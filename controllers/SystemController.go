@@ -2,13 +2,19 @@ package controllers
 
 import (
 	"fmt"
+	"github.com/astaxie/beego"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
 )
 
-//SystemController 系统配置
+//SystemController 分类管理
 type SystemController struct {
+	BaseController
+}
+
+//SystemSettings 系统配置
+type SystemSettings struct {
 	Language           string
 	Languagecode       string
 	Systitle           string
@@ -52,8 +58,18 @@ type SystemController struct {
 	Token              string
 }
 
+//Index 系统设置首页
+func (c *SystemController) Index() {
+	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 系统设定"
+	c.Data["m"] = c.SystemSettings
+	c.setTpl()
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["headcssjs"] = "system/index_headcssjs.html"
+	c.LayoutSections["footerjs"] = "system/index_footerjs.html"
+}
+
 //getSystemInfo 初始化系统设置
-func (y *SystemController) getSystemInfo() {
+func (y *SystemSettings) getSystemInfo() {
 
 	yamlFile, err := ioutil.ReadFile("./conf/sysInfo.yml")
 	if err != nil {
@@ -67,9 +83,13 @@ func (y *SystemController) getSystemInfo() {
 	//fmt.Println(y)
 }
 
-//saveSystemInfo 保存当前系统设置
-func (y *SystemController) saveSystemInfo() {
+//Save 保存当前系统设置
+func (y *SystemController) Save() {
 
+	action := y.GetString(":action")
+	y.Ctx.Request.Form.Get("")
+
+	fmt.Printf(action)
 	d, err := yaml.Marshal(y)
 	if err != nil {
 		fmt.Println(err)

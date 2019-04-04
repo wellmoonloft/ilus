@@ -8,7 +8,7 @@ import (
 // init 初始化
 func init() {
 	orm.RegisterModel(new(BackendUser), new(Resource), new(Role), new(RoleResourceRel), new(RoleBackendUserRel),
-		new(Tags), new(Category), new(Article), new(ArticleCategoryTagsRel), new(BackendSettings), new(Comment),
+		new(Tags), new(Category), new(Article), new(ArticleCategoryTagsRel), new(Comment),
 		new(Attach))
 }
 
@@ -61,11 +61,6 @@ func ArticleTBName() string {
 // ArticleCategoryTagsRelTBName 角色与用户多对多关系表
 func ArticleCategoryTagsRelTBName() string {
 	return TableName("article_category_tags_rel")
-}
-
-// BackendSettingsTBName 常规系统设定表
-func BackendSettingsTBName() string {
-	return TableName("backend_settings")
 }
 
 // CommentTBName 常规系统设定表

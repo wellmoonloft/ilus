@@ -30,7 +30,7 @@
                 },
             },
             submitHandler: function (form) {
-                var url = '{{ urlfor "BackendSettingsController.GeneralSave"}}'
+                var url = '{{ urlfor "SystemController.Save"}}'
                 var data = $thisForm.serialize();
                 $.sdpost(url, data, function (re) {
                     if (re.code === 0) {
@@ -44,6 +44,12 @@
                 return false;
             }
         });
+    }
+
+    function saveOptions(formName) {
+        GeneralOptions.action = 'save/' +formName
+        GeneralOptions.submit()
+
     }
 
 </script>
