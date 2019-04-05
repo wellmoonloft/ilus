@@ -4,9 +4,9 @@
             <label class="col-lg-2 col-sm-4 control-label">API 服务：</label>
             <div class="col-lg-4 col-sm-8 control-radio">
                 <div class="pretty p-default p-round" style="padding-top:7px">
-                    <input type="radio" name="api_status" value="true" {{if .m.Isaip}}checked=""{{end}}>
+                    <input type="radio" name="api_status" value="true" {{if .m.Isapi}}checked=""{{end}}>
                     <label>启用</label>
-                    <input type="radio" name="api_status" value="false" {{if .m.Isaip}}checked=""{{end}}>
+                    <input type="radio" name="api_status" value="false" {{if not .m.Isapi}}checked=""{{end}}>
                     <label>禁用</label>
                 </div>
 
@@ -29,7 +29,7 @@
     </div>
     <div class="box-footer">
         <button type="button" class="btn btn-primary btn-sm "
-                onclick="saveOptions('other')">保存
+                onclick="otherOptions()">保存
         </button>
     </div>
 </form>

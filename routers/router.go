@@ -76,7 +76,7 @@ func init() {
 	beego.Router("/attach/refresh/?:action", &controllers.AttachController{}, "Get:ReFresh")
 
 	//系统设定
-	beego.Router("/system/index", &controllers.SystemController{}, "Get:Index")
+	beego.Router("/system/index", &controllers.SystemController{}, "Get,Post:Index")
 	beego.Router("/system/save/?:action", &controllers.SystemController{}, "Post:Save")
 
 	//首页

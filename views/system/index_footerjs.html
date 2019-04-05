@@ -3,53 +3,149 @@
 <script src="/static/plugins/jquery-validation/localization/messages_zh.min.js"></script>
 <script>
 
-    //表单验证及AJAX提交
-    function validatebasicInfo() {
+    //
+    function GeneralOptions() {
+
         var $thisForm = $('#GeneralOptions');
-        $thisForm.validate({
-            rules: {
-                RealName: {
-                    maxlength: 16,
-                    required: true
-                },
-                Mobile: {
-                    mobile: true,
-                    maxlength: 16,
-                },
-                Email: {
-                    email: true,
-                    maxlength: 256,
-                },
-                ImageUrl: {
-                    required: true
-                },
-            },
-            messages: {
-                Mobile: {
-                    mobile: "请输入正确的手机号",
-                },
-            },
-            submitHandler: function (form) {
-                var url = '{{ urlfor "SystemController.Save"}}'
-                var data = $thisForm.serialize();
-                $.sdpost(url, data, function (re) {
-                    if (re.code === 0) {
-                        layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
-                            window.location.reload();
-                        });
-                    } else {
-                        layer.alert(re.msg, {icon: 2, title: '失败'})
-                    }
+        var url = '{{ urlfor "SystemController.Save"}}/general';
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if (re.code === 0) {
+                layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                    window.location.reload();
                 });
-                return false;
+            } else {
+                layer.alert(re.msg, {icon: 2, title: '失败'})
             }
         });
-    }
-
-    function saveOptions(formName) {
-        GeneralOptions.action = 'save/' +formName
-        GeneralOptions.submit()
+        return false;
 
     }
 
+    //
+    function seoOptions() {
+
+        var $thisForm = $('#seoOptions');
+        var url = '{{ urlfor "SystemController.Save"}}/seo';
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if (re.code === 0) {
+                layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                    window.location.reload();
+                });
+            } else {
+                layer.alert(re.msg, {icon: 2, title: '失败'})
+            }
+        });
+        return false;
+
+    }
+    //
+    function articleOptions() {
+
+        var $thisForm = $('#articleOptions');
+        var url = '{{ urlfor "SystemController.Save"}}/article';
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if (re.code === 0) {
+                layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                    window.location.reload();
+                });
+            } else {
+                layer.alert(re.msg, {icon: 2, title: '失败'})
+            }
+        });
+        return false;
+
+    }
+    //
+    function commentOptions() {
+
+        var $thisForm = $('#commentOptions');
+        var url = '{{ urlfor "SystemController.Save"}}/comment';
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if (re.code === 0) {
+                layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                    window.location.reload();
+                });
+            } else {
+                layer.alert(re.msg, {icon: 2, title: '失败'})
+            }
+        });
+        return false;
+
+    }
+    //
+    function attachOptions() {
+
+        var $thisForm = $('#attachOptions');
+        var url = '{{ urlfor "SystemController.Save"}}/attach';
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if (re.code === 0) {
+                layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                    window.location.reload();
+                });
+            } else {
+                layer.alert(re.msg, {icon: 2, title: '失败'})
+            }
+        });
+        return false;
+
+    }
+    //
+    function adminOptions() {
+
+        var $thisForm = $('#adminOptions');
+        var url = '{{ urlfor "SystemController.Save"}}/admin';
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if (re.code === 0) {
+                layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                    window.location.reload();
+                });
+            } else {
+                layer.alert(re.msg, {icon: 2, title: '失败'})
+            }
+        });
+        return false;
+
+    }
+    //
+    function emailOptions() {
+
+        var $thisForm = $('#emailOptions');
+        var url = '{{ urlfor "SystemController.Save"}}/email';
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if (re.code === 0) {
+                layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                    window.location.reload();
+                });
+            } else {
+                layer.alert(re.msg, {icon: 2, title: '失败'})
+            }
+        });
+        return false;
+
+    }
+    //
+    function otherOptions() {
+
+        var $thisForm = $('#otherOptions');
+        var url = '{{ urlfor "SystemController.Save"}}/other';
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if (re.code === 0) {
+                layer.msg(re.msg, {icon: 1, title: '成功', time: 1000}, function () {
+                    window.location.reload();
+                });
+            } else {
+                layer.alert(re.msg, {icon: 2, title: '失败'})
+            }
+        });
+        return false;
+
+    }
 </script>
