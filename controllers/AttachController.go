@@ -9,6 +9,8 @@ import (
 	"github.com/ilus/imaging"
 	"github.com/ilus/models"
 	"github.com/ilus/utils"
+	"github.com/qiniu/api.v7/auth"
+	"github.com/qiniu/api.v7/storage"
 	"io/ioutil"
 	"math"
 	"strconv"
@@ -30,6 +32,15 @@ func (c *AttachController) Prepare() {
 //Index 附件管理首页
 func (c *AttachController) Index() {
 	c.Data["pageTitle"] = beego.AppConfig.String("appname") + " | 附件管理"
+
+	p := c.SystemSettings.Position
+	if p == 1 {
+		c.Data["sendUrl"] = "/attach/uploadfile"
+	}
+	if p == 2 {
+		c.Data["sendUrl"] = c.SystemSettings.Positionurl
+		c.Data["Token"] = getqiniuToken(c.SystemSettings.Accesskey, c.SystemSettings.Bucket, c.SystemSettings.Secretkey)
+	}
 	//是否显示更多查询条件的按钮
 	c.Data["showMoreQuery"] = false
 	//将页面左边菜单的某项激活
@@ -184,4 +195,19 @@ func (c *AttachController) Delete() {
 	} else {
 		c.jsonResult(utils.JRCodeFailed, "删除失败", 0)
 	}
+}
+
+//getqiniuToken 获取七牛云token
+func getqiniuToken(accessKey, bucket, secretKey string) (token string) {
+
+	// 设置上传凭证有效期
+	putPolicy := storage.PutPolicy{
+		Scope: bucket,
+	}
+	mac := auth.New(accessKey, secretKey)
+	putPolicy.Expires = 7200 //示例2小时有效期
+
+	upToken := putPolicy.UploadToken(mac)
+	//fmt.Println(upToken)
+	return upToken
 }

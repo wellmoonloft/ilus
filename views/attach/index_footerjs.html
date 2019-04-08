@@ -4,10 +4,24 @@
 <!-- 前台分页插件 -->
 <script src="/static/plugins/pagination/pagination.js"></script>
 <script>
+    var sendUrl =
+    $(function () {
+        var positaion = {{ urlfor "AttachController.UploadFile" }};
+        pageInit();
+    })
+    function pageInit() {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+        //验证
+        validateInfo();
+    }
     //初始化上传面板
     $('#uploadImg').fileinput({
         language: 'zh',
-        uploadUrl: '{{ urlfor "AttachController.UploadFile" }}',
+        uploadUrl: '{{ .sendUrl}}',
         uploadAsync: true,
         allowedFileExtensions: ['jpg', 'gif', 'png', 'jpeg', 'svg', 'psd'],
         maxFileCount: 100,
@@ -18,7 +32,8 @@
         uploadExtraData: {
             'uploadToken': 'SOME-TOKEN', // for access control / security
         },
-    }).on('filebatchuploadcomplete', function (event, preview, config, tags, extraData) {
+    }).on('filebatchuploadcomplete',
+        function (event, preview, config, tags, extraData) {
         //$('#uploadImg').fileinput.clean()
         $(".fileinput-remove-button").click();
         $("#uploadForm").hide(400)
