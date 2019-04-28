@@ -9,7 +9,7 @@ import (
 func init() {
 	orm.RegisterModel(new(BackendUser), new(Resource), new(Role), new(RoleResourceRel), new(RoleBackendUserRel),
 		new(Tags), new(Category), new(Article), new(ArticleCategoryTagsRel), new(Comment),
-		new(Attach))
+		new(Attach), new(Customer))
 }
 
 // TableName 下面是统一的表名管理
@@ -71,4 +71,9 @@ func CommentTBName() string {
 // AttachTBName 常规系统设定表
 func AttachTBName() string {
 	return TableName("attach")
+}
+
+// CustomerTBName 常规系统设定表
+func CustomerTBName() string {
+	return TableName("customer")
 }

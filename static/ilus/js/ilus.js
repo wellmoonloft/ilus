@@ -33,6 +33,26 @@ var ilus = function () {
             return "";
         }
     }
+    customerenable = function (val) {
+        if (val === 0 || val === "0") {
+            return '<label class="label label-success label-sm"><i class="fa fa-check"></i> 启用</label>';
+        } else if (val === 1 || val === "1") {
+            return '<label class="label label-danger label-sm"><i class="fa fa-ban"></i> 禁用</label>';
+        } else if (val === -1 || val === "-1")
+            return '<label class="label label-info label-sm"><i class="fa fa-trash"></i> 删除</label>';
+        else {
+            return "";
+        }
+    }
+    sexy = function (val) {
+        if (val === 1 || val === "1" || val === true) {
+            return '<label class="label label-primary label-sm"><i class="fa"></i>男</label>';
+        } else if (val === 0 || val === "0" || val === false) {
+            return '<label class="label label-danger label-sm"><i class="fa"></i>女</label>';
+        } else {
+            return "";
+        }
+    }
     showyes = function (val) {
         if (val === 1 || val === "1" || val === true) {
             return '<label class="label label-primary label-sm"><i class="fa fa-check"></i> 是</label>';
@@ -296,6 +316,10 @@ var ilus = function () {
         showenable: showenable,
         //显示是否
         showyes: showyes,
+        //性别
+        sexy: sexy,
+        //会员卡是否禁用
+        customerenable: customerenable,
         //显示枚举
         showenum: showenum,
         //保存form里的查询条件

@@ -56,6 +56,12 @@ func init() {
 	beego.Router("/backenduser/edit/?:id", &controllers.BackendUserController{}, "Get,Post:Edit")
 	beego.Router("/backenduser/delete", &controllers.BackendUserController{}, "Post:Delete")
 
+	//会员管理路由
+	beego.Router("/customer/index", &controllers.CustomerController{}, "*:Index")
+	beego.Router("/customer/datagrid", &controllers.CustomerController{}, "POST:DataGrid")
+	beego.Router("/customer/edit/?:id", &controllers.CustomerController{}, "Get,Post:Edit")
+	beego.Router("/customer/delete", &controllers.CustomerController{}, "Post:Delete")
+
 	//后台用户中心
 	beego.Router("/usercenter/profile", &controllers.UserCenterController{}, "Get:Profile")
 	beego.Router("/usercenter/basicinfosave", &controllers.UserCenterController{}, "Post:BasicInfoSave")
