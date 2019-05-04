@@ -32,7 +32,13 @@ func (c *BaseController) Prepare() {
 
 // checkLogin判断用户是否登录，未登录则跳转至登录页面
 // 一定要在BaseController.Prepare()后执行
-func (c *BaseController) checkLogin() {
+func (c *BaseController) checkLogin(ignores ...string) {
+	//如果Action在忽略列表里，则直接通用
+	for _, ignore := range ignores {
+		if ignore == c.actionName {
+			return
+		}
+	}
 	if c.curUser.Id == 0 {
 		//登录页面地址
 		urlstr := c.URLFor("HomeController.Login") + "?url="
@@ -85,7 +91,7 @@ func (c *BaseController) checkActionAuthor(ctrlName, ActName string) bool {
 // 传入的参数为忽略权限控制的Action
 func (c *BaseController) checkAuthor(ignores ...string) {
 	//先判断是否登录
-	c.checkLogin()
+	c.checkLogin(ignores...)
 	//如果Action在忽略列表里，则直接通用
 	for _, ignore := range ignores {
 		if ignore == c.actionName {

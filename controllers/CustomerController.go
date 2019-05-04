@@ -21,7 +21,7 @@ func (c *CustomerController) Prepare() {
 	//先执行
 	c.BaseController.Prepare()
 	//如果一个Controller的多数Action都需要权限控制，则将验证放到Prepare
-	c.checkAuthor("DataGrid")
+	c.checkAuthor("DataGrid", "GetCustomerOne")
 	//如果一个Controller的所有Action都需要登录验证，则将验证放到Prepare
 	//权限控制里会进行登录验证，因此这里不用再作登录验证
 	//c.checkLogin()
@@ -128,4 +128,20 @@ func (c *CustomerController) Delete() {
 	} else {
 		c.jsonResult(utils.JRCodeFailed, "删除失败", 0)
 	}
+}
+
+// GetCustomerOne 添加 编辑 页面
+func (c *CustomerController) GetCustomerOne() {
+
+	Id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
+	m := &models.Customer{}
+	var err error
+	if Id > 0 {
+		m, err = models.CustomerOne(Id)
+		if err != nil {
+			c.pageError("数据无效，请刷新后重试")
+		}
+	}
+	c.Data["json"] = m
+	c.ServeJSON()
 }

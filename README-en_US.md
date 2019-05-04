@@ -1,5 +1,7 @@
 ![](http://image.igerm.cn/img/20190325095035.png)
 
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
 > ！！！！！！ For Your Attention  ！！！！！
 
 > ！！！！！！ This Project Is Not Completed  ！！！！！
@@ -47,9 +49,7 @@ Do not support < IE9
 
 ## License
 
-[ANTI-996-LICENSE.v1.0](https://github.com/996icu/996.ICU/blob/master/LICENSE)
-
-
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 ## Dependents
 

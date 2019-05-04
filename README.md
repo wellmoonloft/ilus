@@ -1,5 +1,7 @@
 ![](http://image.igerm.cn/img/20190325095035.png)
 
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
 > ！！！！！！  请注意，本项目未完成  ！！！！！！！！！
 
 > ！！！！！！    多个功能仍未实现  ！！！！！！！！！
@@ -43,7 +45,7 @@
 
 ## 许可证
 
-[反 996 许可证.v1.0](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 
 ## 依赖

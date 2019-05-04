@@ -59,6 +59,7 @@ func init() {
 	//会员管理路由
 	beego.Router("/customer/index", &controllers.CustomerController{}, "*:Index")
 	beego.Router("/customer/datagrid", &controllers.CustomerController{}, "POST:DataGrid")
+	beego.Router("/customer/getcustomerbyid/?:id", &controllers.CustomerController{}, "POST:GetCustomerOne")
 	beego.Router("/customer/edit/?:id", &controllers.CustomerController{}, "Get,Post:Edit")
 	beego.Router("/customer/delete", &controllers.CustomerController{}, "Post:Delete")
 
